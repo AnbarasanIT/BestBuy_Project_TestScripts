@@ -1,0 +1,103 @@
+<div id="useradmin" class="tab-pane fade">
+                  
+      <div class="user_admin" style="display:none;">
+      Welcome to Best-Buy Business Merchandising Tool<br>
+      <span>System Notifications - Latest release # of Biz Tool, other important updates about server, etc  </span>
+      </div>
+      <div style="margin-bottom:5px;display:none;">
+		<div class="action_icons"><a href="#remove_sku" role="button" data-toggle="modal"><button class="showall_btn remove_sku">Remove SKU</button></a></div>
+        <div class="action_icons"><a href="#User_Admin" role="button" data-toggle="modal" id="AddUserIcon"><img src="../themes/default/images/bestbuy/add_icon.png" title="Add New"></a></div>
+        <div class="action_icons"><img src="../themes/default/images/bestbuy/refresh_icon.png" title="Refresh"></div>
+        <div class="clear"></div>
+      </div>
+      
+        <table id="myTable" class="table table-striped table-bordered tab_table" cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <tr>
+              <th>Actions</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>User ID</th>
+              <th>Last Modified By</th>
+              <th id="sortcolor">Last Modified<img class="sortIcon" id="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/asc.png" style="padding-left:26%;position:relative;"></th>
+              <th>Status</th>
+
+            </tr>
+			<tr>
+				<td class="search_td">&nbsp;</td>
+				<td class="search_td"><input type="text" class="searchinput" id="firsrNameSearch" index="1" name="search"></td>
+				<td class="search_td"><input type="text" class="searchinput" id="lastNameSearch" index="2" name="search"></td>
+				<td class="search_td"><input type="text" class="searchinput" id="userIdSearch" index="3" name="search"></td>
+				<td class="search_td"><input type="text" class="searchinput" id="LastModifiedBySearch" index="4" name="search"></td>
+				<td class="search_td"></td>
+				<td class="search_td"><input type="text" class="searchinput" id="statusSearch" index="6" name="search"></td>
+			</tr>
+          </thead>
+		   {{#if rows.length}}
+          <tbody id="usercontent">
+          {{#each rows}}
+            <tr id="{{userId}}">
+			  {{{actionUserAdmin actions}}}
+              <td class="term_td">{{firstName}}</td>
+              <td class="term_td">{{lastName}}</td>
+              <td class="url_td" id="{{roleId}}">{{loginName}}</td>
+              <td class="center_td term_td">{{lastModifiedBy}}</td>
+              <td class="term_td">{{lastModified}}</td>
+              <td class="syn_list_wid">
+                  {{#if active}} 
+                    Active
+                  {{else}} 
+                    Inactive
+                  {{/if}}
+              </td>
+            </tr>
+            {{/each}}
+            </tbody>
+          </table>                    
+      {{else}}
+        <div class="alert alert_msg" id="alert_msg">No Record Available</div>
+      {{/if}}
+	  <div class="alert alert_msg" id="no_record" style="display:none">No Record Available</div>
+
+      <!--user_admin content ends here -->
+    </div>
+                
+
+<div id="Add_useradmin" class="modal hide fade bbmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h4 id="myModalLabel1">Create User</h4>
+  </div>
+  <div class="modal-body">
+    <div class="pop_error" id="pop_error"></div>
+    <div class="addsynonymmodal" style="height:196px;">
+        <table cellpadding="0" cellspacing="1">
+            <tr>
+                <td>First Name<sup>*</sup></td>
+                <td><input type="text" name="fname" id="fname" maxlength="50"><span class="fname-error"></span></td>
+            </tr>
+            <tr>
+                <td>Last Name<sup>*</sup></td>
+                <td><input type="text" name="lname" id="lname" maxlength="50"><span class="lname-error"></span></td>
+            </tr>
+            <tr>
+                <td>User ID<sup>*</sup></td>
+                <td><input type="text" name="uid" id="uid" maxlength="50"><span class="uid-error"></span></td>
+            </tr>
+            <tr>
+                <td>User Status<sup>*</sup></td>
+                <td><input type="radio" class="radio_style" name="userStatus" checked value="true">Active &nbsp;&nbsp; <input type="radio" name="userStatus" class="radio_style" value="false">Inactive<span class="userStatus-error"></td>
+            </tr>
+            <tr>
+                <td>Permission Group<sup>*</sup></td>
+                <td><input type="radio" name="role" class="radio_style" checked value="1">Administrative &nbsp;&nbsp; <input type="radio" name="role" class="radio_style" value="2">Individual Contributor<span class="role-error"></td>
+            </tr>
+            
+        </table>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn bbyellowbtn" id="user_create">CREATE</a>
+    <a href="#" class="cancel_btn_new" data-dismiss="modal" aria-hidden="true">CANCEL</a>
+  </div> 
+</div>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<btuidata>
+
+	<PrimaryTermData>Samsung</PrimaryTermData>
+	<TermsData>Tv</TermsData>
+	<TermsData1>Mobile</TermsData1>
+	<StartDateData>07-02-2013 02:24</StartDateData>
+	<EndDateData>08-02-2013 02:24</EndDateData>
+	<StartDate_Year_Data>2014</StartDate_Year_Data>
+	<EndDate_Year_Data>2018</EndDate_Year_Data>
+	<Time_Hour_Data>04</Time_Hour_Data>
+	<Time_Minute_Data>30</Time_Minute_Data>
+	
+	<Syn_Search_Value>Canon</Syn_Search_Value>
+	<Syn_InValid_Search_Value>demousers</Syn_InValid_Search_Value>
+	<Syn_Search_DropDown_Value>label=Status</Syn_Search_DropDown_Value>
+    <Syn_PrimaryColumn_SearchField_Data>Canon</Syn_PrimaryColumn_SearchField_Data>
+
+	<rd_redirectTerm_value>SamsungMobile</rd_redirectTerm_value>
+	<rd_RedirectUrl_value>bestbuy/com</rd_RedirectUrl_value>
+	<rd_SearchProfile_value>National</rd_SearchProfile_value>
+	<rd_Update_redirectTerm_value>Samsung</rd_Update_redirectTerm_value>
+	<rd_Search_Data>canon</rd_Search_Data>
+	<rd_Invalid_Search_Data>cat</rd_Invalid_Search_Data>
+	<rd_Search_DropDown_Data>Term</rd_Search_DropDown_Data>
+	<rd_TermsSearchField_Data>Test</rd_TermsSearchField_Data>
+	
+
+	<banners_Banner_Name>NewYear Offer</banners_Banner_Name>
+	<banners_Banner_Position>KEYWORD TOP</banners_Banner_Position>
+	<banners_Banner_Priority>1</banners_Banner_Priority>
+	<banners_Banner_StartDate>30-01-2013 15:15</banners_Banner_StartDate>
+	<banners_Banner_EndDate>26-02-2013 15:15</banners_Banner_EndDate>
+	<banners_Context_KeyWord>Samsung</banners_Context_KeyWord>
+	<banners_Context_SearchProfile>Global</banners_Context_SearchProfile>
+	<banners_Theme_Template>HTML_ONLY</banners_Theme_Template>
+	<banners_Theme_AssetID>5489</banners_Theme_AssetID>
+	<banners_Update_BannerName>NewYear Offer-2013
+	</banners_Update_BannerName>
+	<banners_Search_Data>SamplePrdoct</banners_Search_Data>
+	<banners_Search_DropDown_Data>Banner Name
+	</banners_Search_DropDown_Data>
+	<banners_BannersNameSearch_Data>Presidentday</banners_BannersNameSearch_Data>
+	<banners_KeywordSearch>Mobile</banners_KeywordSearch>
+	
+
+	<promo_Create_PromoName_Data>Lg</promo_Create_PromoName_Data>
+	<promo_Create_PromoSKUID_Data>5413</promo_Create_PromoSKUID_Data>
+	<promo_Create_StartDate>25-01-2013 15:15</promo_Create_StartDate>
+	<promo_Create_EndDate>26-01-2013 15:15</promo_Create_EndDate>
+	<promo_Update_Promo_Name>Lg_Mobile</promo_Update_Promo_Name>
+	<promo_Search_PromoName_Data>test</promo_Search_PromoName_Data>
+	<promo_Search_DropDown_Data>label=PromoPage Name
+	</promo_Search_DropDown_Data>
+	<promo_promoNameSearchField_Data>Lg</promo_promoNameSearchField_Data>
+	<promo_promoNameInvalidSearch_Data>ansa</promo_promoNameInvalidSearch_Data>
+
+	<facets_Search_Data>test</facets_Search_Data>
+	<facets_Invalid_Search_Data>Sample</facets_Invalid_Search_Data>
+	<facetsSystemNameSearchData>TestData</facetsSystemNameSearchData>
+	<facets_Search_DropDown_Data>label=System Name</facets_Search_DropDown_Data>
+	<facets_Create_SysName_Data>Sample</facets_Create_SysName_Data>
+	<facets_Create_DispName_Data>SampleName</facets_Create_DispName_Data>
+	<facets_Update_DispName_Data>SampleTest</facets_Update_DispName_Data>
+	<facets_Create_StartDate>25-10-2013 15:15</facets_Create_StartDate>
+	<facets_Create_EndDate>26-01-2015 15:15</facets_Create_EndDate>
+	<facets_Create_AssetData>10</facets_Create_AssetData>
+	<facets_Updated_AssetData>09</facets_Updated_AssetData>
+	<facets_Create_MinValue>4</facets_Create_MinValue>
+	<facets_Create_MaxValue>15</facets_Create_MaxValue>
+	<facets_Date_Month_Data>Mar</facets_Date_Month_Data>
+	<facets_Date_Day_data>10</facets_Date_Day_data>
+	<facets_StartDate_Year_data>2014</facets_StartDate_Year_data>
+	<facets_EndDate_Year_data>2018</facets_EndDate_Year_data>
+	<facets_SystemNameSearchField_Data>SampleData</facets_SystemNameSearchField_Data>
+	<facets_SystemNameInvalidSearch_Data>saas</facets_SystemNameInvalidSearch_Data>
+	<facets_Create_SysName_Data1>TestData1</facets_Create_SysName_Data1>
+	<facets_Create_DispName_Data1>TestData1</facets_Create_DispName_Data1>
+	<facets_OrderValue_SearchData>aa</facets_OrderValue_SearchData>
+	
+	<fo_textField_Data>2</fo_textField_Data>
+	<fo_textField_Data1>1</fo_textField_Data1>	
+
+	<bnb_Search_Data>test</bnb_Search_Data>
+	<bnb_Search_Not_Available_Data>Sample</bnb_Search_Not_Available_Data>
+	<bnb_Create_Search_Data>LG</bnb_Create_Search_Data>
+	<bnb_Create_Successfully_Text>BoostAndBlock created successfully</bnb_Create_Successfully_Text>
+	<bnb_Update_Successfully_Text>BoostAndBlock updated successfully</bnb_Update_Successfully_Text>
+	<bnb_deleted_Successfully_Text>BoostAndBlock deleted successfully</bnb_deleted_Successfully_Text>
+	<bnb_Approved_Successfully_Text>The BoostAndBlock was approved</bnb_Approved_Successfully_Text>
+	<bnb_Search_DropDown_Data>label=Search Term</bnb_Search_DropDown_Data>
+	<bnb_SearchTermsSearchField_Data>Samsung</bnb_SearchTermsSearchField_Data>
+	<bnb_SearchTermsInvalidSearch_Data>TestData</bnb_SearchTermsInvalidSearch_Data>
+
+	<user_FirstName_UpdateData>abraham</user_FirstName_UpdateData>
+	<user_LastName_UpdateData>Thomas</user_LastName_UpdateData>
+	<user_UpdateID>121</user_UpdateID>
+	<user_Search_Data>abraham</user_Search_Data>
+	<user_InValid_Search_Data>Andrew</user_InValid_Search_Data>
+	<user_Search_DropDown_Data>First Name</user_Search_DropDown_Data>
+	
+	
+	<validation_Msg_InvalidSearch>No Record Available</validation_Msg_InvalidSearch>
+	<synonyms_validation_Msg_Create>Synonym created successfully</synonyms_validation_Msg_Create>
+	<synonyms_validation_Msg_Update>Synonym updated successfully</synonyms_validation_Msg_Update>
+	<synonyms_validation_Msg_Approve>The Synonym was approved</synonyms_validation_Msg_Approve>
+	<synonyms_validation_Msg_Reject>The Synonym was rejected</synonyms_validation_Msg_Reject>
+	<synonyms_validation_Msg_Delete>Synonym deleted successfully</synonyms_validation_Msg_Delete>
+	
+	<keyword_validation_Msg_Create>KeywordRedirect created successfully</keyword_validation_Msg_Create>
+	<keyword_validation_Msg_Update>KeywordRedirect updated successfully</keyword_validation_Msg_Update>
+	<keyword_validation_Msg_Approve>The Keyword Redirect was approved</keyword_validation_Msg_Approve>
+	<keyword_validation_Msg_Reject>The Keyword Redirect was rejected</keyword_validation_Msg_Reject>
+	<keyword_validation_Msg_Delete>KeywordRedirect deleted successfully</keyword_validation_Msg_Delete>
+	
+	<banners_validation_Msg_Create>Banner created successfully</banners_validation_Msg_Create>
+	<banners_validation_Msg_Update>Banner updated successfully</banners_validation_Msg_Update>
+	<banners_validation_Msg_Approve>The Banner was approved</banners_validation_Msg_Approve>
+	<banners_validation_Msg_Reject>The Banner was rejected</banners_validation_Msg_Reject>
+	<banners_validation_Msg_Delete>Banner deleted successfully</banners_validation_Msg_Delete>
+	
+	<promo_validation_Msg_Create>Promo created successfully</promo_validation_Msg_Create>
+	<promo_validation_Msg_Update>Promo updated successfully</promo_validation_Msg_Update>
+	<promo_validation_Msg_Approve>The Promo was approved</promo_validation_Msg_Approve>
+	<promo_validation_Msg_Reject>The Promo was rejected</promo_validation_Msg_Reject>
+	<promo_validation_Msg_Delete>Promo deleted successfully</promo_validation_Msg_Delete>
+	
+	<facets_validation_Msg_Create>Facet created successfully</facets_validation_Msg_Create>
+	<facets_validation_Msg_Update>Facet updated successfully</facets_validation_Msg_Update>
+	<facets_validation_Msg_Approve>The Facet was approved</facets_validation_Msg_Approve>
+	<facets_validation_Msg_Reject>The Facet was rejected</facets_validation_Msg_Reject>
+	<facets_validation_Msg_Delete>Facet deleted successfully</facets_validation_Msg_Delete>
+	
+	<bnb_validation_Msg_Create>BoostAndBlock created successfully</bnb_validation_Msg_Create>
+	<bnb_validation_Msg_Update>BoostAndBlock updated successfully</bnb_validation_Msg_Update>
+	<bnb_validation_Msg_Approve>The BoostAndBlock was approved</bnb_validation_Msg_Approve>
+	<bnb_validation_Msg_Reject>The BoostAndBlock was rejected</bnb_validation_Msg_Reject>
+	<bnb_validation_Msg_Delete>BoostAndBlock deleted successfully</bnb_validation_Msg_Delete>
+	
+	<user_validation_Msg_Create>user created successfully</user_validation_Msg_Create>
+	<user_validation_Msg_Update>user updated successfully</user_validation_Msg_Update>
+	
+	
+</btuidata>

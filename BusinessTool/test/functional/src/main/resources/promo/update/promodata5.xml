@@ -1,0 +1,19 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Update - Promo - Promo Name with Special characters & Characters-->
+<promo>
+     
+	<promo_PromoName_Data>Sony Camera</promo_PromoName_Data>
+	<promo_PromoSKUID_Data>687</promo_PromoSKUID_Data>
+	<Start_Date_Month>Feb</Start_Date_Month>	
+	<Start_Date_Day>28</Start_Date_Day>	
+	<Start_Date_Year>2013</Start_Date_Year>
+    <Start_Date_Hour>23</Start_Date_Hour>
+    <Start_Date_Minute>29</Start_Date_Minute>
+    <End_Date_Month>Mar</End_Date_Month>	
+	<End_Date_Day>10</End_Date_Day>	
+	<End_Date_Year>2013</End_Date_Year>
+    <End_Date_Hour>23</End_Date_Hour>
+    <End_Date_Minute>29</End_Date_Minute> 
+	
+</promo>

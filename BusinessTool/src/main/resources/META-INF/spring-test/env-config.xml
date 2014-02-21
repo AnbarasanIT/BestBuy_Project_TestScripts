@@ -1,0 +1,470 @@
+<environments>
+	<environment default="true" desc="Local Development environment"
+		name="local">
+		<Database name="db">
+			<url>jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.56.201)(PORT = 1521)) (LOAD_BALANCE = no)(CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = OV1PCM.bestbuy.com)))</url>
+			<driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+			<username>system</username>
+			<passwordFile>/tmp/search/bt/bin/.dbpass</passwordFile>
+			<type>oracle</type>
+		</Database>
+		<WebService name="ldap">
+			<port>389</port>
+			<password>Test@1234specials</password>
+			<context>o=bestbuy.com</context>
+			<host>devdirectory.bestbuy.com</host>
+			<protocol>ldap</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSAF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>localhost</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSCF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>localhost</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="ExternalWS">
+			<port>8080</port>
+			<password />
+			<context>search-api</context>
+			<suggest.query.uri>/search-api/suggest/?term=</suggest.query.uri>
+			<search.site.uri>/search-api/search/</search.site.uri>
+			<host>localhost</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="solr">
+			<port>8080</port>
+			<password />
+			<context>solr/products</context>
+			<host>localhost</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>localhost</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUCF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>localhost</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="CategoryTreeAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<category.tree.query.uri>/DaaS/daas/service/categorytree?startRun=true</category.tree.query.uri>
+			<host>localhost</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<Scheduler name="CFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>10,8</synonym.status>
+			<keyword.status>10,8</keyword.status>
+			<promo.status>10,8</promo.status>
+			<banner.status>10,8</banner.status>
+			<facet.status>10,8</facet.status>
+		</Scheduler>
+		<Scheduler name="AFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>3,8</synonym.status>
+			<keyword.status>3,8</keyword.status>
+			<promo.status>3,8</promo.status>
+			<banner.status>3,8</banner.status>
+			<facet.status>3,8</facet.status>
+		</Scheduler>
+		<Category name="CategoryXSL">
+			<category.nodes.xsl.path>/META-INF/stylesheets/categoryNodes.xsl
+			</category.nodes.xsl.path>
+			<category.tree.xsl.path>/META-INF/stylesheets/categoryTree.xsl
+			</category.tree.xsl.path>
+		</Category>
+	</environment>
+	<environment default="false" desc="QA 1 environment" name="qa1">
+		<Database name="db">
+			<url>jdbc:oracle:thin:@(DESCRIPTION = 
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb01-vip)(PORT = 1525))
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb02-vip)(PORT = 1525))
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb03-vip)(PORT = 1525))
+				(LOAD_BALANCE = yes)(CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = od1pcm.na.bestbuy.com)))
+			</url>
+			<driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+			<username>biz_tool2</username>
+			<passwordFile>/tmp/search/bt/bin/.dbpass</passwordFile>
+			<type>oracle</type>
+		</Database>
+		<WebService name="ldap">
+			<port>389</port>
+			<password>Test@1234specials</password>
+			<context>o=bestbuy.com</context>
+			<host>devdirectory.bestbuy.com</host>
+			<protocol>ldap</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSAF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>168.94.73.61</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSCF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>168.94.73.61</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="ExternalWS">
+			<port>8080</port>
+			<password />
+			<context>search-api</context>
+			<suggest.query.uri>/search-api/suggest/?term=</suggest.query.uri>
+			<search.site.uri>/search-api/search/</search.site.uri>
+			<host>168.94.73.181</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="solr">
+			<port>8080</port>
+			<password />
+			<context>solr/products</context>
+			<host>168.94.73.181</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>168.94.73.61</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUCF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>168.94.73.61</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="CategoryTreeAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<category.tree.query.uri>/DaaS/daas/service/categorytree?startRun=true</category.tree.query.uri>
+			<host>168.94.64.138</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<Scheduler name="CFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>10,8</synonym.status>
+			<keyword.status>10,8</keyword.status>
+			<promo.status>10,8</promo.status>
+			<banner.status>10,8</banner.status>
+			<facet.status>10,8</facet.status>
+		</Scheduler>
+		<Scheduler name="AFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>3,8</synonym.status>
+			<keyword.status>3,8</keyword.status>
+			<promo.status>3,8</promo.status>
+			<banner.status>3,8</banner.status>
+			<facet.status>3,8</facet.status>
+		</Scheduler>
+		<Category name="CategoryXSL">
+			<category.nodes.xsl.path>/META-INF/stylesheets/categoryNodes.xsl
+			</category.nodes.xsl.path>
+			<category.tree.xsl.path>/META-INF/stylesheets/categoryTree.xsl
+			</category.tree.xsl.path>
+		</Category>
+	</environment>
+	<environment default="false" desc="QA 2 environment" name="qa2">
+		<Database name="db">
+			<url>jdbc:oracle:thin:@(DESCRIPTION = 
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb01-vip)(PORT = 1525))
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb02-vip)(PORT = 1525))
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb03-vip)(PORT = 1525))
+				(LOAD_BALANCE = yes)(CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = od1pcm.na.bestbuy.com)))
+			</url>
+			<driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+			<username>biz_tool</username>
+			<passwordFile>/tmp/search/bt/bin/.dbpass</passwordFile>
+			<type>oracle</type>
+		</Database>
+		<WebService name="ldap">
+			<port>389</port>
+			<password>Test@1234specials</password>
+			<context>o=bestbuy.com</context>
+			<host>devdirectory.bestbuy.com</host>
+			<protocol>ldap</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSAF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>168.94.73.45</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSCF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>168.94.73.45</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="ExternalWS">
+			<port>8080</port>
+			<password />
+			<context>search-api</context>
+			<suggest.query.uri>/search-api/suggest/?term=</suggest.query.uri>
+			<search.site.uri>/search-api/search/</search.site.uri>
+			<host>168.94.73.43</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="solr">
+			<port>8080</port>
+			<password />
+			<context>solr/products</context>
+			<host>168.94.73.181</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>168.94.73.45</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUCF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>168.94.73.45</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="CategoryTreeAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<category.tree.query.uri>/DaaS/daas/service/categorytree?startRun=true</category.tree.query.uri>
+			<host>168.94.73.45</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<Scheduler name="CFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>10,8</synonym.status>
+			<keyword.status>10,8</keyword.status>
+			<promo.status>10,8</promo.status>
+			<banner.status>10,8</banner.status>
+			<facet.status>10,8</facet.status>
+		</Scheduler>
+		<Scheduler name="AFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>3,8</synonym.status>
+			<keyword.status>3,8</keyword.status>
+			<promo.status>3,8</promo.status>
+			<banner.status>3,8</banner.status>
+			<facet.status>3,8</facet.status>
+		</Scheduler>
+		<Category name="CategoryXSL">
+			<category.nodes.xsl.path>/META-INF/stylesheets/categoryNodes.xsl
+			</category.nodes.xsl.path>
+			<category.tree.xsl.path>/META-INF/stylesheets/categoryTree.xsl
+			</category.tree.xsl.path>
+		</Category>
+	</environment>
+	<environment default="false" desc="QA 3 environment" name="qa3">
+		<Database name="db">
+			<url>jdbc:oracle:thin:@(DESCRIPTION = 
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb01-vip)(PORT = 1525))
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb02-vip)(PORT = 1525))
+				(ADDRESS = (PROTOCOL = TCP)(HOST = dldolsdb03-vip)(PORT = 1525))
+				(LOAD_BALANCE = yes)(CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = od1pcm.na.bestbuy.com)))
+			</url>
+			<driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+			<username>search</username>
+			<passwordFile>/tmp/search/bt/bin/.dbpass</passwordFile>
+			<type>oracle</type>
+		</Database>
+		<WebService name="ldap">
+			<port>389</port>
+			<password>Hello@1234</password>
+			<context>o=bestbuy.com</context>
+			<host>qadirectory.bestbuy.com</host>
+			<protocol>ldap</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSAF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>168.94.73.184</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DaaSCF">
+			<port>8080</port>
+			<password />
+			<context>DaaS/daas/service/jsonreceive/</context>
+			<host>168.94.73.184</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="ExternalWS">
+			<port>8080</port>
+			<password />
+			<context>search-api</context>
+			<suggest.query.uri>/search-api/suggest/?term=</suggest.query.uri>
+			<search.site.uri>/search-api/search/</search.site.uri>
+			<host>168.94.73.181</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="solr">
+			<port>8080</port>
+			<password />
+			<context>solr/products</context>
+			<host>168.94.73.181</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>168.94.73.184</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="DeleteSKUCF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<removeSku.query.uri>/DaaS/daas/service/delete?sku=</removeSku.query.uri>
+			<host>168.94.73.184</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<WebService name="CategoryTreeAF">
+		    <daas.requestor.id>Dotcom</daas.requestor.id>
+			<port>8080</port>
+			<password />
+			<context>DaaS</context>
+			<category.tree.query.uri>/DaaS/daas/service/categorytree?startRun=true</category.tree.query.uri>
+			<host>168.94.73.184</host>
+			<protocol>http</protocol>
+			<timeout>30000</timeout>
+			<username />
+		</WebService>
+		<Scheduler name="CFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>10,8</synonym.status>
+			<keyword.status>10,8</keyword.status>
+			<promo.status>10,8</promo.status>
+			<banner.status>10,8</banner.status>
+			<facet.status>10,8</facet.status>
+		</Scheduler>
+		<Scheduler name="AFJobs">
+			<daas.requestor.id>Dotcom</daas.requestor.id>
+			<data.source>BBY.com</data.source>
+			<synonym.status>3,8</synonym.status>
+			<keyword.status>3,8</keyword.status>
+			<promo.status>3,8</promo.status>
+			<banner.status>3,8</banner.status>
+			<facet.status>3,8</facet.status>
+		</Scheduler>
+		<Category name="CategoryXSL">
+			<category.nodes.xsl.path>/META-INF/stylesheets/categoryNodes.xsl
+			</category.nodes.xsl.path>
+			<category.tree.xsl.path>/META-INF/stylesheets/categoryTree.xsl
+			</category.tree.xsl.path>
+		</Category>
+	</environment>
+</environments>

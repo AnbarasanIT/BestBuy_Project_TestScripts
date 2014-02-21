@@ -1,0 +1,155 @@
+<div class="keyword_search">
+	<h1>Banner Keyword Search</h1>
+		<table class="table" cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+			<tr>
+				<td width="130">Keyword Search</td>
+				<td><input type="text" class="input-xxlarge" name="search" id="keywordsSearch"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<table id="myTable" class="table table-striped table-bordered tab_table tablesorter" cellpadding="0" cellspacing="0" border="0">
+  <thead id="synonumcontent">
+	<tr>
+	  <th></th>
+	  <th>Actions</th>
+	  <th tabname="bannerName"><span class="tabheader">Banner Name<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="bannerNameSearch" name="search"></th>
+	  <th tabname="bannerType"><span class="tabheader">Type<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="typeSearch" name="search"></th>
+	  <th tabname="bannerPriority"><span class="tabheader">Priority<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	  <th tabname="startDate"><span class="tabheader">Start Date<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	  <th tabname="endDate"><span class="tabheader">End Date<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	  <th tabname="modifiedBy"><span class="tabheader">Last Modified By<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="lastModifiedBySearch" name="search"></td></th>
+	  <th tabname="modifiedDate" id="sortcolor" class="sortclr"><span class="tabheader">Modified Date<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	  <th tabname="status"><span class="tabheader">Status<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="statusSearch" name="search"></th>
+	</tr>
+  </thead>
+  {{#if rows.length}}
+  <tbody id="bannercontent">
+		{{#each rows}}
+		<tr id="{{bannerId}}" name="parent">
+			<td>
+			   <div class="tabopen iconclose" dataflag="true"></div>
+			</td>
+			<td class="center_td">{{{actionBanners actions}}}</td>
+			<td class="prim_width" id="bannerName">{{{bannerName}}}</td>
+			<td class="center_td match_wid">{{{bannerType}}}</td>
+			<td class="center_td match_wid">{{{bannerPriority}}}</td>
+			<td>{{{startDate}}}</td>
+			<td>{{{endDate}}}</td>
+			<td>{{{modifiedBy}}}</td>
+			<td>{{{modifiedDate}}}</td>
+			<td class="center_td match_wid">{{{status}}}</td>
+		</tr>
+		{{#each contexts}}
+		<tr>
+		  <td colspan='10' class="data">
+			<div>
+			  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tbody>
+				  <tr id="{{contextId}}">
+					<td class="banner_dropdown"><span>{{{categoryTree categoryPath}}}</span> | <span>{{{keywords}}}</span> | <span>{{{searchProfileType}}}</span></td>
+				  </tr>
+				</tbody>
+			  </table>
+			</div>
+		  </td>
+		</tr>
+		{{/each}}
+	    {{/each}} 
+  </tbody>
+  {{else}}
+  <tbody>
+	    <tr><td colspan="10"><div class="alert alert_msg" id="alert_msg">No Record Available</div></td></tr>
+  </tbody>
+  {{/if}}
+</table>
+
+
+<div id="Add_banners" class="modal hide fade bbmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+		 <h4 id="bannerLabel">Create Banner</h4>
+	</div>
+	
+	<div class="modal-body">
+		<div class="pop_error" id="pop_error"></div>
+		 <h4>Banners</h4>
+
+		<div class="addsynonymmodal">
+			<table cellpadding="0" cellspacing="1">
+				<tr>
+					<td>Banner Name<sup>*</sup></td>
+					<td class="flt_right">
+						<input type="text" id="bannername">
+					</td>
+				</tr>
+				<tr>
+					<td>Position</td>
+					<td>
+						<select id="position" disabled>
+							<option value="1">BROWSE TOP</option>
+							<option value="2" selected>KEYWORD TOP</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Priority<sup>*</sup></td>
+					<td>
+						<select class="smallselect" id="priority">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Start Date<sup>*</sup></td>
+					<td>
+						<div class="well">
+							<div id="startDateDiv" class="input-append date">
+								<input id="startDate" data-format="MM-dd-yyyy hh:mm" type="text"></input>
+							</div>
+						</div>
+						<span class="startdate-error"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>End Date<sup>*</sup></td>
+					<td>
+						<div class="well">
+							<div id="endDateDiv" class="input-append date">
+								<input id="endDate" data-format="MM-dd-yyyy hh:mm" type="text"></input>
+							</div>
+						</div>
+						<span class="enddate-error"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		 <h4>Contexts</h4>
+
+		<div class="addsynonymmodal" id="addsynonymmodal">
+			<div id="TextBoxes">
+			</div>
+			<div class="addremovebutt">
+				<a href="#" class="btn bbbluebtn" value='Add Button' title="Add Category" id='addButton'>ADD CATEGORY</a>
+			</div>
+		</div>
+		
+		<br>
+		 <h4>Theme</h4>
+		<div class="bannerTemplate">
+		</div>
+		
+	</div>
+			<div class="modal-footer">
+				<a href="#" class="btn bbyellowbtn" id="create">CREATE</a>
+				<a href="#" class="cancel_btn_new" data-dismiss="modal" aria-hidden="true" id="cancel">CANCEL</a>
+			</div>
+			<!--Add banner div ends here -->
+		</div> 

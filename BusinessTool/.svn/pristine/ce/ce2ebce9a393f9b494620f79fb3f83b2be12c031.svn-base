@@ -1,0 +1,192 @@
+
+<table id="myTable" class="table table-striped table-bordered tab_table" cellpadding="0" cellspacing="0" border="0">
+  <thead>
+	<tr>
+	  <th>Actions</th>	
+	   <th tabname="searchTerm"><span class="tabheader">Search Term<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="searchTermSearch" name="search"></th>
+	   <th tabname="searchProfileName"><span class="tabheader">Search Profile<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="searchProfileNameSearch" name="search"></th>
+		<th tabname="categoryPath"><span class="tabheader">Category<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="categoryPathSearch" name="search"></th>
+	  <th tabname="modifiedBy"><span class="tabheader">Last Modified By<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="lastModifiedBySearch" name="search"></th>
+	  <th tabname="modifiedDate" id="sortcolor" class="sortclr"><span class="tabheader">Modified Date<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	   <th tabname="status"><span class="tabheader">Status<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="statusSearch" name="search"></th>
+	</tr>
+  </thead>
+  {{#if rows.length}}
+  <tbody >
+	{{#each rows}}
+		<tr id="{{boostBlockId}}">
+			<td class="center_td action_wid">{{{actionBoostBlock actions}}}</td>
+			<td class="prim_width"><a href="#Add_boostblock" data-toggle="modal" name="details">{{{searchTerm}}}</a></td>
+			<td class="prim_width">{{{searchProfileName}}}</td> 
+			<td class="cat_td">{{{categoryBlock categoryPath}}}<span>{{{time}}}</span></td>			
+			<td>{{{modifiedBy}}}</td>
+			<td class="date_width">{{{modifiedDate}}}</td>
+			<td class="center_td match_wid">{{{status}}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+  {{else}}
+   <tbody>
+	    <tr><td colspan="7"><div class="alert alert_msg" id="alert_msg">No Record Available</div></td></tr>
+   </tbody>
+   {{/if}}
+</table>
+
+
+<div id="Add_boostblock" class="modal hide fade bbmodal boost_pop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h4 id="myModalLabel1">Create Boost and Block</h4>
+  </div>
+  <div class="modal-body">
+	<div class="pop_error" id="pop_error"></div>
+    <div class="boostblockone">
+        <p>Create New Boost/Block for keyword search results</p>
+        <table cellpadding="0" cellspacing="1">
+            <tr>
+                <td>Search Term<sup>*</sup></td>
+                <td><input type="text" id="searchTerm" value="TV"></td>
+            </tr>
+        </table>    
+            <br>
+          <table>    
+            <tr>
+                <td>Search Profile<sup>*</sup></td>
+                <td>
+                    <select>
+                      <option>Global</option>
+                    </select>
+                </td>
+            </tr>
+          </table> 
+		<div id="treeviewContent">
+		<span>Category TreeView Loading... <img id="catLoading" src="../themes/default/images/bestbuy/cat_tree_loader.gif"></span>
+		</div>
+        <div class="sub_cat">
+            Selected Category<sup>*</sup>: <span id="selCategory"></span>
+        </div>
+       
+    </div>
+    <div class="boostblocktwo" style="display: none;">
+        <div class="sub_cat">
+          <span class="bluefont">Boost and Block for:</span><span id="boostBlockName"> Iphone</span><br>
+          <span class="bluefont">Profile:</span> Global<br>
+          <span id="pathSpan"><span class="bluefont">Category:</span> <span id="catPath"> /Home/TV & Home Theater/Blue-Ray Players</span></span><br>
+          <span id="createdSpan"><span class="bluefont">Created:</span><span id="cretdOn"> 12-12-2012 (10:01:45) </span> by <b><span id="crtdBy">Lorem Ipsum</span></b></span><br>
+          <span id="mdfdSpan"><span class="bluefont">Last Edited:</span> <span id="mdfdOn"> 13-12-2012 (13:13:05) </span> by <b> <span id="mdfdBy"> MerchandisingUI.BestBuy</span></b></span><br>
+          
+           <span id="itemBlockedBoosted"> <span id="itemBlocked"> #12 </span>  <span class="bluefont">Items blocked</span> <span id="space">   </span>  <span id="itemBloosted"> #12 </span> <span class="bluefont">Items boosted</span></span> <br>
+        </div> 
+        <br>
+        <h4>Boosted Product</h4>
+        <p>These products are boosted on top of this search result page. There can be Maximum 20 boosted products <p>
+           <div class="addsynonymmodal facetvalues">
+            <table cellpadding="0" cellspacing="1" id="boostTable">
+                <thead>
+                <tr>
+                  <td class="center_td">Product Name</td>
+                  <td class="center_td">SKU ID's</td>
+                  <td class="center_td">Boosts</td>
+                  <td class="center_td"><a class="btn bbbluebtn" id="clrBtn">REMOVE ALL BOOSTS</a></td></td>
+                </tr>
+                </thead>
+                <tbody id="boostedProduct">
+
+                </tbody>
+              </table>   
+            </div>
+            <br>
+        <h4>Blocked Product</h4>
+        <p>These Products are blocked completely on this search result page.There can be maximum 10 blocked products<p>
+            <div class="addsynonymmodal facetvalues">
+            <table cellpadding="0" cellspacing="1" id="blockTable">
+                <thead>
+                <tr>
+                  <td class="center_td">Product Name</td>
+                  <td class="center_td">SKU ID's</td>
+                  <td class="center_td"><a class="btn bbbluebtn" id="clrBtnRemoveBlock">REMOVE ALL BLOCKS</a></td></td>
+                </tr>
+                </thead>
+                <tbody id="blockedProduct">
+                </tbody>
+              </table>   
+            </div>
+            <br>
+        <h4>Search Product Listing</h4>
+            <div class="addsynonymmodal facetvalues">
+            <table cellpadding="0" cellspacing="1">
+                <thead>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td class="center_td">Product Name</td>
+                  <td class="center_td">SKU ID's</td>
+                  <td class="center_td">Boost</td>
+                  <td class="center_td">Block</td>
+                </tr>
+                </thead>
+                <tbody id="productsList">
+               
+                </tbody>
+              </table>   
+            </div>
+		<div id="tablefooter" style="bottom: auto; width: 100%"></div>
+    </div>
+  <div class="boostblockthree" style="display: none;">
+        <div class="sub_cat">
+          <span class="bluefont">Boost and Block for:</span><span id="boostBlockName1"> Iphone</span><br>
+          <span class="bluefont">Profile:</span> Global<br>
+          <span id="pathSpan"><span class="bluefont">Category:</span> <span id="catPath1"> /Home/TV & Home Theater/Blue-Ray Players</span></span><br>
+          <span id="createdSpan1"><span class="bluefont">Created:</span><span id="cretdOn1"> 12-12-2012 (10:01:45) </span> by <b><span id="crtdBy1">Lorem Ipsum</span></b></span><br>
+          <span id="mdfdSpan1"><span class="bluefont">Last Edited:</span> <span id="mdfdOn1"> 13-12-2012 (13:13:05) </span> by <b> <span id="mdfdBy1"> MerchandisingUI.BestBuy</span></b></span><br>
+          <span id="itemBlockedBoostedRead"> <span id="itemBlockedRead"> #12 </span>  <span class="bluefont">Items blocked</span> <span id="space">   </span>  <span id="itemBloostedRead"> #12 </span> <span class="bluefont">Items boosted</span></span> <br>	
+        </div> 
+        <br>
+        <h4>Boosted Product</h4>
+        <p>These products are boosted on top of this search result page. There can be Maximum 20 boosted products <p>
+           <div class="addsynonymmodal facetvalues">
+            <table cellpadding="0" cellspacing="1">
+                <thead>
+                <tr>
+                  <td class="center_td">Product Name</td>
+                  <td class="center_td">SKU ID's</td>
+                  <td class="center_td">Boost Order</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </thead>
+                <tbody id="boostedProduct1">
+
+                </tbody>
+              </table>   
+            </div>
+            <br>
+        <h4>Blocked Product</h4>
+        <p>These products are boosted on top of this search result page. There can be Maximum 20 boosted products <p>
+            <div class="addsynonymmodal facetvalues">
+            <table cellpadding="0" cellspacing="1">
+                <thead>
+                <tr>
+                  <td class="center_td">Product Name</td>
+                  <td class="center_td">SKU ID's</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </thead>
+                <tbody id="blockedProduct1">
+                </tbody>
+              </table>   
+            </div>
+            <br>
+            <div class="boostfooter" align="center">
+              <a href="#" class="btn bbyellowbtn" data-dismiss="modal" aria-hidden="true"  id="cancel">CLOSE</a>
+            </div>
+    </div>
+  </div>
+ <div class="modal-footer boost_footer" id="boostblocknextdiv"><a id="boostblocknext" class="btn bbyellowbtn">NEXT</a>
+  <a class="cancel_btn_new" href="javascript:;" data-dismiss="modal" title="Cancel" aria-hidden="true" id="cancelbtn">CANCEL</a></div>  
+	<div class="modal-footer boost_footer" align="center" id="bottombuttons" style="display:none;">
+	  <a href="#" class="btn bbyellowbtn" id="boostBlockBack">BACK</a>
+	  <a href="#" class="btn bbyellowbtn" id="create">CREATE</a>
+      <a class="cancel_btn_new" href="javascript:;" data-dismiss="modal" title="Cancel" aria-hidden="true" id="cancel">CANCEL</a>
+	  <!--<a href="#" class="btn bbyellowbtn" data-dismiss="modal" aria-hidden="true"  id="cancel">CANCEL</a>-->
+	</div>
+  <!--Add boost_block content ends here -->  
+</div>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output indent="yes" encoding="UTF-8" method="xml" />
+	
+	<xsl:template match="/">
+		<root>
+			<xsl:apply-templates select="category">
+				<xsl:with-param name="path" select="current()" />
+			</xsl:apply-templates>
+		</root>
+	</xsl:template>
+
+	<xsl:template match="category">
+		<xsl:param name="path" />
+		<item>
+			<xsl:attribute name="id">
+	 			<xsl:value-of select="@id" />
+	 		</xsl:attribute>
+			<xsl:attribute name="path">
+         		<xsl:call-template name="genPath" />
+        	</xsl:attribute>
+			<content>
+				<name>
+					<xsl:value-of select="@name" />
+				</name>
+			</content>
+			<xsl:if test="count(category) > 0">
+			 	
+					<xsl:apply-templates select="category">
+						<xsl:with-param name="path" select="current()" />
+					</xsl:apply-templates>
+			
+			</xsl:if>
+		</item>
+	</xsl:template>
+
+	<xsl:template name="genPath">
+		<xsl:param name="prevPath" />
+		<xsl:variable name="currPath" select="concat('|',@name,$prevPath)" />
+		<xsl:for-each select="parent::*">
+			<xsl:call-template name="genPath">
+				<xsl:with-param name="prevPath" select="$currPath" />
+			</xsl:call-template>
+		</xsl:for-each>
+		<xsl:if test="not(parent::*)">
+			<xsl:value-of disable-output-escaping="yes" select="substring-after($currPath,'|')" />
+		</xsl:if>
+	</xsl:template>
+
+</xsl:stylesheet>

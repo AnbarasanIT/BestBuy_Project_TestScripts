@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <suite name="MerchandisingUI_BT" verbose="1">
+
+	 <test name="MerchandisingUI_BT_Login_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.LoginTest" />
+			<methods>
+
+				 <include name="testWithout_UserNameAndPassword"></include>
+				<include name="testWithoutUserName_WithPassword"></include>
+				<include name="testWithoutPassword_WithUserName"></include>
+				<include name="testValid_UserNameAndPassword"></include>
+
+			</methods>
+		</classes>
+	</test>  
+	
+     <test name="MerchandisingUI_BT_Synonym_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.SynonymsTest" />
+			<methods>
+                               
+				<include name="testAddAndUpdateSynonym"></include>
+				<include name="testVerifySynonymsCreatePopUpTextFieldsValidation"></include> 
+				<include name="testVerifySynonymsEditPopUpTextFieldsValidation"></include>
+				<include name="testInValidAddSynonym"></include>
+				<include name="testInvalidUpdateSynonyms"></include>
+				<include name="testApproveSynonym"></include>
+				<include name="testRejectSynonym"></include>
+				<include name="testSearchSynonymsPage"></include>
+				<include name="testColumnSearchSynonymsPage"></include>
+				<include name="testInvalidSearchSynonymsPage"></include>
+				<include name="testSortnRefreshSynonyms"></include>
+				<include name="testPagiNationForSynonymsPage"></include>
+				<include name="testdeleteSynonymsPage"></include>
+
+			</methods>
+		</classes>
+	</test>  
+ 
+ <test name="MerchandisingUI_BT_KeywordRedirect_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.KeywordRedirectTest" />
+			<methods>
+				<include name="testAddAndUpdatekeywordRedirect"></include>
+				 <include name="testVerifyKeywordCreatePopUpTextFieldsValidation"></include>
+				<include name="testVerifyKeywordEditPopUpTextFieldsValidation"></include>
+				<include name="testInvalidAddkeywordRedirect"></include>
+				<include name="testInvalidUpdatekeywordRedirect"></include>
+				<include name="testApprovekeywordRedirect"></include>
+				<include name="testRejectkeywordRedirect"></include>
+				<include name="testSortnRefreshkeywordRedirect"></include>
+				<include name="testSearchkeywordRedirect"></include>
+				<include name="testSearchKeywordTerms"></include>
+				<include name="testInvalidSearchkeywordRedirect"></include>
+				<include name="testPaginationForKeywordRedirectPage"></include>
+				<include name="testDeletekeywordRedirect"></include>  
+
+			</methods>
+		</classes>
+	</test> 
+
+   <test name="MerchandisingUI_BT_Banners_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.BannersTest" />
+			<methods>
+				<include name="testAddAndUpdateBanners"></include> 
+		 	 <include name="testVerifyBannersCreatePopUpTextFieldsValidation"></include>
+				<include name="testVerifyBannersUpdatePopUpTextFieldsValidation"></include>
+				<include name="testApproveBanners"></include>
+				<include name="testRejectBanners"></include>
+				<include name="testShowOrHideAllBanners"></include>
+				<include name="testSortnRefreshBanners"></include>
+				<include name="testKeyWordSearch"></include>
+				<include name="testSearchBannersName"></include>
+				<include name="testInvalidSearchBanners"></include>
+				<include name="testPaginationForBanners"></include>
+				<include name="testDeleteBanners"></include>   
+						</methods>
+		</classes>
+	    </test> 
+
+ 	 <test name="MerchandisingUI_BT_Promo_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.PromoTest" />
+			<methods>
+
+				<include name="testAddAndUpdatePromoPage"></include>
+				<include name="testVerifyPromoCreatePopUpTextFieldsValidation"></include>
+				<include name="testVerifyPromoUpdatePopUpTextFieldsValidation"></include>
+				<include name="testApprovePromoPage"></include>
+				<include name="testRejectPromoPage"></include>
+				<include name="testSortnRefreshPromoPage"></include>
+				<include name="testInvalidSearchPromoPage"></include>
+				<include name="testSearchPromoName"></include>
+				<include name="testPromoPagination"></include>
+				<include name="testDeletePromo"></include>
+			</methods>
+		</classes>
+	</test> 
+
+   <test name="MerchandisingUI_BT_Facets_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.FacetsTest" />
+			<methods>
+
+				<include name="testAddAndUpdateFacets"></include>				
+				<include name="testApproveFacets"></include>
+				<include name="testRejectFacets"></include>
+				<include name="testShowOrHideAllFacets"></include>
+				<include name="testSortnRefreshFacets"></include>
+				<include name="testFacetsSystemName"></include>
+				<include name="testInvalidFacetsSearch"></include>
+				<include name="testPagiNationForFacets"></include>
+				<include name="testVerifyFacetsCreatePopUpTextFieldsValidation"></include>
+				<include name="testVerifyFacetsEditPopUpTextFieldsValidation"></include>				
+				<include name="testDeleteFacets"></include>
+
+			</methods>
+		</classes>
+	</test>  
+
+ 
+  	 <test name="MerchandisingUI_BT_Facets Ordering_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.FacetOrderingTest" />
+			<methods>
+
+				<include name="testFacetOrdering"></include>
+				 <include name="testEditFacetOrdering"></include> 
+				  <include name="testeditFacetDisplayOrder"></include> 	
+			</methods>
+		</classes>
+	</test> 
+
+ 	<test name="MerchandisingUI_BT_BoostAndBlock_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.BoostBlockTest" />
+			<methods>
+
+				<include name="testAddAndUpdateBoostBlock"></include>
+				<include name="testboostAndBlockEmptySearchTerm"></include>
+				<include name="testApproveBoostAndBlock"></include>
+				<include name="testRejectBoostAndBlock"></include>
+				<include name="testSearchBoostAndBlockSearchTerm"></include>
+				<include name="testSearchBoostAndBlockNotAvailableData"></include>
+				<include name="testSortnRefreshBoostAndBlock"></include>
+				<include name="testPagiNationForBoostAndBlockPage"></include>
+				<include name="testDeleteBoostAndBlock"></include> 
+
+			</methods>
+		</classes>
+	</test> 
+
+	  <test name="MerchandisingUI_BT_UserAdmin_Test" junit="false"
+		preserve-order="true">
+		<classes>
+			<class name="com.bestbuy.search.bt.testcases.UserAdminTest" />
+			<methods>
+
+				<include name="testAddAndUpdateUserAdmin"></include>
+				<include name="testVerifyUserCreatePopUpTextFieldsValidation"></include>
+				<include name="testVerifyUserUpdatePopUpTextFieldsValidation"></include>
+				<include name="testSortnRefreshUserAdminPage"></include>
+				<include name="testSearchValidUser"></include>
+				<include name="testSearchInValidUser"></include>
+
+			</methods>
+		</classes>
+	</test>  
+ 
+
+</suite> 
+   

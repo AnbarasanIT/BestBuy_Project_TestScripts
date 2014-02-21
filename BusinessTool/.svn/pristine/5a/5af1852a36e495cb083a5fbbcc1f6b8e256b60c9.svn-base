@@ -1,0 +1,15 @@
+{
+
+    "info":{
+        "widgetId":"12012",
+        "widgetName":"Pagination"
+    },
+    "components":{
+        "pagination":{
+            "moduleName":"pagination",
+            "host":"http://localhost",
+            "port":"2020"
+        }
+    },
+    "theme":"red"
+}

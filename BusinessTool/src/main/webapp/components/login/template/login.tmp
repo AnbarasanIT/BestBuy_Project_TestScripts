@@ -1,0 +1,13 @@
+<div class="login_div">
+	<div align="center"><img src="../themes/default/images/bestbuy/logo.png" width="133" height="91" border="0" alt="Best Buy"></div>
+	<div class="login_panel">
+		<div class="login_header"><img src="../themes/default/images/bestbuy/login_title.png"></div>		
+		<form class="login_cont" id="loginForm">
+			<input type="text" id="txtUsername" placeholder="Username" name="j_username" value="Admin" maxlength="50"><span class="username-error"></span>
+			<input type="password" id="txtPassword" placeholder="Password" name="j_password" value="Admin" maxlength="50"><span class="password-error"></span>
+			<div align="right"><button class="btn btn-success btn_style" id="btnLogin" type="button">sign in</button></div>
+		</form>
+		<!--login_panel div ends here -->
+	</div>
+	<!--login_div div ends here -->
+</div>

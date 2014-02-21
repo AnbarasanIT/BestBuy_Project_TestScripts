@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mojos>
+    <mojo>
+        <goal>pdf-report</goal>
+        <description>Goal which generates pdf report for the project</description>
+        <requiresDirectInvocation>false</requiresDirectInvocation>
+        <requiresProject>true</requiresProject>
+        <requiresReports>false</requiresReports>
+        <aggregator>false</aggregator>
+        <requiresOnline>false</requiresOnline>
+        <inheritedByDefault>true</inheritedByDefault>
+        <implementation>
+            <dependency>
+                <groupId>com.photon.phresco.plugins</groupId>
+                <artifactId>report-phresco-plugin</artifactId>
+                <type>jar</type>
+                <version>2.2.0.4002</version>
+                <class>com.photon.phresco.plugins.ReportPlugin</class>
+            </dependency>
+        </implementation>
+        <language>java</language>
+        <instantiationStrategy>per-lookup</instantiationStrategy>
+        <executionStrategy>once-per-session</executionStrategy>
+        <threadSafe>false</threadSafe>
+        <configuration>
+            <parameters>
+                <parameter>
+                    <name>
+                        <value lang="en">Report Type</value>
+                    </name>
+                    <type>List</type>
+                    <required>false</required>
+                    <editable>true</editable>
+                    <description></description>
+                    <key>reportType</key>
+                    <possibleValues>
+                        <value key="crisp">Overall</value>
+                        <value key="detail">Detailed</value>
+                    </possibleValues>
+                    <multiple>false</multiple>
+                    <value>crisp</value>
+                    <sort>false</sort>
+                    <show>true</show>
+                </parameter>
+                <parameter>
+                    <name>
+                        <value lang="en">Test Type</value>
+                    </name>
+                    <type>Hidden</type>
+                    <required>false</required>
+                    <editable>true</editable>
+                    <description></description>
+                    <key>testType</key>
+                    <multiple>false</multiple>
+                    <value>unit</value>
+                    <sort>false</sort>
+                    <show>false</show>
+                </parameter>
+                <parameter>
+                    <name>
+                        <value lang="en">Sonar Url</value>
+                    </name>
+                    <type>Hidden</type>
+                    <required>false</required>
+                    <editable>true</editable>
+                    <description></description>
+                    <key>sonarUrl</key>
+                    <multiple>false</multiple>
+                    <value>http://168.94.64.135:2468/sonar</value>
+                    <sort>false</sort>
+                    <show>false</show>
+                </parameter>
+                <parameter>
+                    <name>
+                        <value lang="en">Logo</value>
+                    </name>
+                    <type>Hidden</type>
+                    <required>false</required>
+                    <editable>true</editable>
+                    <description></description>
+                    <key>logo</key>
+                    <multiple>false</multiple>
+                    <value>PGh0bWw+PGhlYWQ+PHRpdGxlPkFwYWNoZSBUb21jYXQvNy4wLjE0IC0gRXJyb3IgcmVwb3J0PC90aXRsZT48c3R5bGU+PCEtLUgxIHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjtjb2xvcjp3aGl0ZTtiYWNrZ3JvdW5kLWNvbG9yOiM1MjVENzY7Zm9udC1zaXplOjIycHg7fSBIMiB7Zm9udC1mYW1pbHk6VGFob21hLEFyaWFsLHNhbnMtc2VyaWY7Y29sb3I6d2hpdGU7YmFja2dyb3VuZC1jb2xvcjojNTI1RDc2O2ZvbnQtc2l6ZToxNnB4O30gSDMge2ZvbnQtZmFtaWx5OlRhaG9tYSxBcmlhbCxzYW5zLXNlcmlmO2NvbG9yOndoaXRlO2JhY2tncm91bmQtY29sb3I6IzUyNUQ3Njtmb250LXNpemU6MTRweDt9IEJPRFkge2ZvbnQtZmFtaWx5OlRhaG9tYSxBcmlhbCxzYW5zLXNlcmlmO2NvbG9yOmJsYWNrO2JhY2tncm91bmQtY29sb3I6d2hpdGU7fSBCIHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjtjb2xvcjp3aGl0ZTtiYWNrZ3JvdW5kLWNvbG9yOiM1MjVENzY7fSBQIHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjtiYWNrZ3JvdW5kOndoaXRlO2NvbG9yOmJsYWNrO2ZvbnQtc2l6ZToxMnB4O31BIHtjb2xvciA6IGJsYWNrO31BLm5hbWUge2NvbG9yIDogYmxhY2s7fUhSIHtjb2xvciA6ICM1MjVENzY7fS0tPjwvc3R5bGU+IDwvaGVhZD48Ym9keT48aDE+SFRUUCBTdGF0dXMgNTAwIC0gPC9oMT48SFIgc2l6ZT0iMSIgbm9zaGFkZT0ibm9zaGFkZSI+PHA+PGI+dHlwZTwvYj4gRXhjZXB0aW9uIHJlcG9ydDwvcD48cD48Yj5tZXNzYWdlPC9iPiA8dT48L3U+PC9wPjxwPjxiPmRlc2NyaXB0aW9uPC9iPiA8dT5UaGUgc2VydmVyIGVuY291bnRlcmVkIGFuIGludGVybmFsIGVycm9yICgpIHRoYXQgcHJldmVudGVkIGl0IGZyb20gZnVsZmlsbGluZyB0aGlzIHJlcXVlc3QuPC91PjwvcD48cD48Yj5leGNlcHRpb248L2I+IDxwcmU+amF2YS5sYW5nLk51bGxQb2ludGVyRXhjZXB0aW9uCgljb20ucGhvdG9uLnBocmVzY28uc2VydmljZS5pbXBsLkRiU2VydmljZS5nZXRGaWxlRnJvbURCKERiU2VydmljZS5qYXZhOjIyNSkKCWNvbS5waG90b24ucGhyZXNjby5zZXJ2aWNlLnJlc3QuYXBpLkFkbWluU2VydmljZS5nZXRJY29uKEFkbWluU2VydmljZS5qYXZhOjEyMykKCXN1bi5yZWZsZWN0Lk5hdGl2ZU1ldGhvZEFjY2Vzc29ySW1wbC5pbnZva2UwKE5hdGl2ZSBNZXRob2QpCglzdW4ucmVmbGVjdC5OYXRpdmVNZXRob2RBY2Nlc3NvckltcGwuaW52b2tlKE5hdGl2ZU1ldGhvZEFjY2Vzc29ySW1wbC5qYXZhOjM5KQoJc3VuLnJlZmxlY3QuRGVsZWdhdGluZ01ldGhvZEFjY2Vzc29ySW1wbC5pbnZva2UoRGVsZWdhdGluZ01ldGhvZEFjY2Vzc29ySW1wbC5qYXZhOjI1KQoJamF2YS5sYW5nLnJlZmxlY3QuTWV0aG9kLmludm9rZShNZXRob2QuamF2YTo1OTcpCgljb20uc3VuLmplcnNleS5zcGkuY29udGFpbmVyLkphdmFNZXRob2RJbnZva2VyRmFjdG9yeSQxLmludm9rZShKYXZhTWV0aG9kSW52b2tlckZhY3RvcnkuamF2YTo2MCkKCWNvbS5zdW4uamVyc2V5LnNlcnZlci5pbXBsLm1vZGVsLm1ldGhvZC5kaXNwYXRjaC5BYnN0cmFjdFJlc291cmNlTWV0aG9kRGlzcGF0Y2hQcm92aWRlciRSZXNwb25zZU91dEludm9rZXIuX2Rpc3BhdGNoKEFic3RyYWN0UmVzb3VyY2VNZXRob2REaXNwYXRjaFByb3ZpZGVyLmphdmE6MjA1KQoJY29tLnN1bi5qZXJzZXkuc2VydmVyLmltcGwubW9kZWwubWV0aG9kLmRpc3BhdGNoLlJlc291cmNlSmF2YU1ldGhvZERpc3BhdGNoZXIuZGlzcGF0Y2goUmVzb3VyY2VKYXZhTWV0aG9kRGlzcGF0Y2hlci5qYXZhOjc1KQoJY29tLnN1bi5qZXJzZXkuc2VydmVyLmltcGwudXJpLnJ1bGVzLkh0dHBNZXRob2RSdWxlLmFjY2VwdChIdHRwTWV0aG9kUnVsZS5qYXZhOjI4OCkKCWNvbS5zdW4uamVyc2V5LnNlcnZlci5pbXBsLnVyaS5ydWxlcy5SaWdodEhhbmRQYXRoUnVsZS5hY2NlcHQoUmlnaHRIYW5kUGF0aFJ1bGUuamF2YToxNDcpCgljb20uc3VuLmplcnNleS5zZXJ2ZXIuaW1wbC51cmkucnVsZXMuUmVzb3VyY2VDbGFzc1J1bGUuYWNjZXB0KFJlc291cmNlQ2xhc3NSdWxlLmphdmE6MTA4KQoJY29tLnN1bi5qZXJzZXkuc2VydmVyLmltcGwudXJpLnJ1bGVzLlJpZ2h0SGFuZFBhdGhSdWxlLmFjY2VwdChSaWdodEhhbmRQYXRoUnVsZS5qYXZhOjE0NykKCWNvbS5zdW4uamVyc2V5LnNlcnZlci5pbXBsLnVyaS5ydWxlcy5Sb290UmVzb3VyY2VDbGFzc2VzUnVsZS5hY2NlcHQoUm9vdFJlc291cmNlQ2xhc3Nlc1J1bGUuamF2YTo4NCkKCWNvbS5zdW4uamVyc2V5LnNlcnZlci5pbXBsLmFwcGxpY2F0aW9uLldlYkFwcGxpY2F0aW9uSW1wbC5faGFuZGxlUmVxdWVzdChXZWJBcHBsaWNhdGlvbkltcGwuamF2YToxNDY5KQoJY29tLnN1bi5qZXJzZXkuc2VydmVyLmltcGwuYXBwbGljYXRpb24uV2ViQXBwbGljYXRpb25JbXBsLl9oYW5kbGVSZXF1ZXN0KFdlYkFwcGxpY2F0aW9uSW1wbC5qYXZhOjE0MDApCgljb20uc3VuLmplcnNleS5zZXJ2ZXIuaW1wbC5hcHBsaWNhdGlvbi5XZWJBcHBsaWNhdGlvbkltcGwuaGFuZGxlUmVxdWVzdChXZWJBcHBsaWNhdGlvbkltcGwuamF2YToxMzQ5KQoJY29tLnN1bi5qZXJzZXkuc2VydmVyLmltcGwuYXBwbGljYXRpb24uV2ViQXBwbGljYXRpb25JbXBsLmhhbmRsZVJlcXVlc3QoV2ViQXBwbGljYXRpb25JbXBsLmphdmE6MTMzOSkKCWNvbS5zdW4uamVyc2V5LnNwaS5jb250YWluZXIuc2VydmxldC5XZWJDb21wb25lbnQuc2VydmljZShXZWJDb21wb25lbnQuamF2YTo0MTYpCgljb20uc3VuLmplcnNleS5zcGkuY29udGFpbmVyLnNlcnZsZXQuU2VydmxldENvbnRhaW5lci5zZXJ2aWNlKFNlcnZsZXRDb250YWluZXIuamF2YTo1MzcpCgljb20uc3VuLmplcnNleS5zcGkuY29udGFpbmVyLnNlcnZsZXQuU2VydmxldENvbnRhaW5lci5zZXJ2aWNlKFNlcnZsZXRDb250YWluZXIuamF2YTo2OTkpCglqYXZheC5zZXJ2bGV0Lmh0dHAuSHR0cFNlcnZsZXQuc2VydmljZShIdHRwU2VydmxldC5qYXZhOjcyMikKPC9wcmU+PC9wPjxwPjxiPm5vdGU8L2I+IDx1PlRoZSBmdWxsIHN0YWNrIHRyYWNlIG9mIHRoZSByb290IGNhdXNlIGlzIGF2YWlsYWJsZSBpbiB0aGUgQXBhY2hlIFRvbWNhdC83LjAuMTQgbG9ncy48L3U+PC9wPjxIUiBzaXplPSIxIiBub3NoYWRlPSJub3NoYWRlIj48aDM+QXBhY2hlIFRvbWNhdC83LjAuMTQ8L2gzPjwvYm9keT48L2h0bWw+</value>
+                    <sort>false</sort>
+                    <show>false</show>
+                </parameter>
+                <parameter>
+                    <name>
+                        <value lang="en">Theme</value>
+                    </name>
+                    <type>Hidden</type>
+                    <required>false</required>
+                    <editable>true</editable>
+                    <description></description>
+                    <key>theme</key>
+                    <multiple>false</multiple>
+                    <value>{&quot;ButtonColor&quot;:&quot;#51A1C9&quot;,&quot;CopyRight&quot;:&quot;BestBuy&quot;,&quot;LabelColor&quot;:&quot;#000000&quot;,&quot;DisabledLabelColor&quot;:&quot;#FDEA00&quot;,&quot;brandingColor&quot;:&quot;#12C2E9&quot;,&quot;accordionBackGroundColor&quot;:&quot;#638E97&quot;,&quot;MenuBackGround&quot;:&quot;#223D62&quot;,&quot;CopyRightColor&quot;:&quot;#000000&quot;,&quot;bodyBackGroundColor&quot;:&quot;#FFFFFF&quot;,&quot;PageHeaderColor&quot;:&quot;#005088&quot;,&quot;MenufontColor&quot;:&quot;#FFFFFF&quot;}</value>
+                    <sort>false</sort>
+                    <show>false</show>
+                </parameter>
+            </parameters>
+        </configuration>
+    </mojo>
+</mojos>

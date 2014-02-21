@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    					http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+	<beans:bean id="sessionTimeoutRedirectFilter"
+		class="com.bestbuy.search.merchandising.security.SessionTimedOutFilter">
+		<beans:property name="customSessionExpiredErrorCode"
+			value="401" />
+	</beans:bean>
+
+	<!-- HTTP security configurations -->
+	<http auto-config="true" use-expressions="false">
+		<form-login login-page="/index.html" authentication-failure-url="/index.html?error=true"
+			default-target-url="/html/index.html" always-use-default-target="true" />
+		<intercept-url pattern="/index.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />  <!-- Required in order to access the login page -->
+		<intercept-url pattern="/error" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/health" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/css/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/themes/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/lib/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/json/config.json" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/search/**" access="IS_AUTHENTICATED_ANONYMOUSLY" /> <!-- This is for the SearchProduct team to access their test page in our application -->
+		<intercept-url pattern="/category/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />  <!--  This is for posting CategoryTree from the DAAS -->
+			
+		<intercept-url pattern="/externalWS/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />  <!-- This is for the SearchProduct team to access their test page in our 
+			application -->
+         <intercept-url pattern="/admin*" access="ROLE_ADMIN" />
+		<intercept-url pattern="/**" access="IS_AUTHENTICATED_REMEMBERED,ROLE_USER" />
+       
+		<custom-filter ref="sessionTimeoutRedirectFilter" after="EXCEPTION_TRANSLATION_FILTER" />
+		<logout logout-success-url="/" invalidate-session="true" />
+		<!-- <session-management> <concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/> 
+			</session-management> -->
+	</http>
+
+	<!-- Uncomment the following if you are using db authentication -->
+<!--     <authentication-manager alias="authenticationManager"> -->
+    	<!-- SHA-256 values can be produced using 'echo -n your_desired_password | sha256sum' (using normal *nix environments) -->
+<!-- 
+	     <authentication-provider user-service-ref="usersService" >
+		  	<password-encoder hash="sha-256"/>
+		  </authentication-provider>    
+	</authentication-manager>	 -->
+	
+ 	<ldap-server url="${ldap.protocol}://${ldap.host}:${ldap.port}/${ldap.context}" manager-dn="uid=D15,ou=special users,o=bestbuy.com" manager-password="${ldap.password}" /> 
+
+	<!-- Comment the next node if not using ldap -->
+    <authentication-manager alias="authenticationManager">
+    	<ldap-authentication-provider user-dn-pattern="uid={0},ou=people" user-context-mapper-ref="usersService" />
+    </authentication-manager>
+		
+ 	<beans:bean id="userUtil" class="com.bestbuy.search.merchandising.security.UserUtil" scope="request">
+	  	<beans:property name="securityContext">
+	    	<beans:bean class="com.bestbuy.search.merchandising.security.MerchSecurityContextImpl" />
+	  	</beans:property>
+	  	<aop:scoped-proxy/>
+	</beans:bean> 
+
+</beans:beans>	

@@ -1,0 +1,21 @@
+<environment>
+
+	<Browser>htmlunit</Browser>
+	<Resolution>1280x1024</Resolution>
+
+
+	<Server desc="Server configuration" name="Server configuration">
+        <context>MerchandisingUI</context>
+        <admin_username>admin</admin_username>
+        <deploy_dir>deploy</deploy_dir>
+        <additional_context/>
+        <port>8080</port>
+        <admin_password>admin</admin_password>
+        <version>7.0.x</version>
+        <certificate/>
+        <type>Apache Tomcat</type>
+        <remoteDeployment>false</remoteDeployment>
+        <host>localhost</host>      
+        <protocol>http</protocol>
+    </Server>
+</environment>

@@ -1,0 +1,32 @@
+###### 09/06/2012 File created by Ramiro.Serrato
+# Controller layer : 0xxxxx
+000001={0} listing was successful
+000002={0} created successfully
+000003={0} deleted successfully
+000004={0} updated successfully
+000005={0} retrieved successfully
+000006=
+000007=
+000008=
+
+000100=The {0} was approved
+000101=The {0} was rejected
+
+# Service layer : 1xxxxx
+
+# DAO layer messages: 2xxxxx 
+
+# Common messages : 3xxxxx
+
+Listing.Success={0} listing was successful
+Create.Success={0} created successfully
+Delete.Success={0} deleted successfully
+Approve.Success=The {0} was approved
+Reject.Success=The {0} was rejected
+Retrive.Success={0} retrieved successfully
+Update.Success={0} updated successfully
+LoadFacetCategory.Success={0} Load Facet for a category was successful
+LoadFacetValues.Success={0} Load Facet values was successful
+isExist.false={0} unique
+BoostAndBlock.NewValidationSuccess=This is a valid Boost or Block
+RemoveSku.Success=Request to delete sku posted successfully

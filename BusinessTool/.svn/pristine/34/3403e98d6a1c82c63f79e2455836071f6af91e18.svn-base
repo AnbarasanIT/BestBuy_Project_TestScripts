@@ -1,0 +1,53 @@
+<header class="inner_header">
+  <div class="header_right">
+      <div class="flt_right">
+      <div class="flt_left admin_border">
+    <div class="username">
+      <b>Hi, <span id='firstname'></span> <span id='lastname'></span> (<span
+        id='username'></span>) <b class'pipe'>&#124;</b> <span class="logout" id="logout">Logout</span></b>
+        </div>
+      <div class="userpermissions">
+        <b><span id='useradmin'><a data-toggle="tab"
+            href="#useradmin">Admin Tools</a></span> <b class'pipe'>&#124;</b> <span id='removeSku'><a
+            href="#remove_sku" role="button" data-toggle="modal">Remove
+              SKU</a></span> <b class'pipe'>&#124;</b> <span id="getcategorytree"><a href="#cattree">Load Category Tree</a></span><br>
+        </div> 
+      </div>
+    </div>
+    </div>
+    <figure class="logo">
+      <img src="../themes/default/images/bestbuy/logo_inner.png"
+        title="Bestbuy">
+    </figure>
+</header>
+
+<div id="remove_sku" class="modal hide fade bbmodal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"
+      aria-hidden="true">x</button>
+    <h4 id="myModalLabel">Remove SKU</h4>
+  </div>
+  <div class="modal-body">
+    <div class="addsynonymmodal">
+      <div class="sub_cat">
+        <p>Selected SKU to have it removed from the SOLR Index.</p>
+        <p>
+          <strong>NOTE:</strong> Only use this in emergency cases.
+        </p>
+        <p>
+          SKU: <input type="text" placeholder="Enter numbers only" maxlength="50" id="skuRemoveID"> <a href="#" class="btn bbbluebtn flt"  id="submitRemoveSku">Remove</a>
+        </p>
+      </div>
+      <div class="removeSKU">
+      	<h4 id="removeSKUTitle" ></h4>
+      </div>
+      <div id="removeSkuData"></div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn bbyellowbtn" data-dismiss="modal"
+      aria-hidden="true">CLOSE</a>
+  </div>
+  <!--Add Synonym contents finish here -->
+</div>

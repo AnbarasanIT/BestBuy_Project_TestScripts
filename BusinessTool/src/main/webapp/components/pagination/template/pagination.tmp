@@ -1,0 +1,13 @@
+<!--SPT 3791 Show pagination bar always in all the features -->
+
+    <div align="center" class="pagination_div">
+    	<button class="pagination_btn btn_disable" id="prevouspage" title="Previous">Prev</button>
+    	Page <input type="text" placeholder="1" value="{{pageIndex}}" class="page_txt" id="paignation" maxlength="50" /> of <span id="totalCountOfPages">{{totalCountOfPages}}</span>
+    	<button class="pagination_btn" id="nextpage" title="Next">Next</button> 
+    	<select maxlength="50" id="rowsPerPage">
+				{{{rowsOption rowsPerPage}}}
+          </select>
+    </div>
+
+
+

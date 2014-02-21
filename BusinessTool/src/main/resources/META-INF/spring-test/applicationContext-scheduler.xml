@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      						http://www.springframework.org/schema/task
+   							http://www.springframework.org/schema/task/spring-task-3.0.xsd
+   							http://www.springframework.org/schema/batch 
+   							http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
+
+	<bean id="configLoader"
+		class="com.bestbuy.search.foundation.common.XmlPropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:META-INF/spring-test/env-config.xml</value>
+		</property>
+	</bean>
+
+	<!-- Start Merchandising Jobs -->
+	<bean name="synonymGroupJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.SynonymGroupJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSCF.protocol}://${DaaSCF.host}:${DaaSCF.port}/${DaaSCF.context}" />
+				<entry key="requestorId" value="${CFJobs.daas.requestor.id}" />
+				<entry key="source" value="${CFJobs.data.source}" />
+				<entry key="status" value="${CFJobs.synonym.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="keywordRedirectJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.KeywordRedirectJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSCF.protocol}://${DaaSCF.host}:${DaaSCF.port}/${DaaSCF.context}" />
+				<entry key="requestorId" value="${CFJobs.daas.requestor.id}" />
+				<entry key="source" value="${CFJobs.data.source}" />
+				<entry key="status" value="${CFJobs.keyword.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="promoJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.PromoJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSCF.protocol}://${DaaSCF.host}:${DaaSCF.port}/${DaaSCF.context}" />
+				<entry key="requestorId" value="${CFJobs.daas.requestor.id}" />
+				<entry key="source" value="${CFJobs.data.source}" />
+				<entry key="status" value="${CFJobs.promo.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="bannerJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.BannerJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSCF.protocol}://${DaaSCF.host}:${DaaSCF.port}/${DaaSCF.context}" />
+				<entry key="requestorId" value="${CFJobs.daas.requestor.id}" />
+				<entry key="source" value="${CFJobs.data.source}" />
+				<entry key="status" value="${CFJobs.banner.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="facetJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.FacetJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSCF.protocol}://${DaaSCF.host}:${DaaSCF.port}/${DaaSCF.context}" />
+				<entry key="requestorId" value="${CFJobs.daas.requestor.id}" />
+				<entry key="source" value="${CFJobs.data.source}" />
+				<entry key="status" value="${CFJobs.facet.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="expiredJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.ExpiredAssetsJob" />
+	</bean>
+	<bean name="deleteAssetsJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.DeleteAssetsJob" />
+	</bean>
+	<bean name="attributesJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.AttributesJob" />
+	</bean>
+	<!-- Start of AF Jobs -->
+	<bean name="synonymGroupJobAF" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.SynonymGroupJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSAF.protocol}://${DaaSAF.host}:${DaaSAF.port}/${DaaSAF.context}" />
+				<entry key="requestorId" value="${AFJobs.daas.requestor.id}" />
+				<entry key="source" value="${AFJobs.data.source}" />
+				<entry key="status" value="${AFJobs.synonym.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="keywordRedirectJobAF" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.KeywordRedirectJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSAF.protocol}://${DaaSAF.host}:${DaaSAF.port}/${DaaSAF.context}" />
+				<entry key="requestorId" value="${AFJobs.daas.requestor.id}" />
+				<entry key="source" value="${AFJobs.data.source}" />
+				<entry key="status" value="${AFJobs.keyword.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="promoJobAF" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.PromoJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSAF.protocol}://${DaaSAF.host}:${DaaSAF.port}/${DaaSAF.context}" />
+				<entry key="requestorId" value="${AFJobs.daas.requestor.id}" />
+				<entry key="source" value="${AFJobs.data.source}" />
+				<entry key="status" value="${AFJobs.promo.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="bannerJobAF" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.BannerJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSAF.protocol}://${DaaSAF.host}:${DaaSAF.port}/${DaaSAF.context}" />
+				<entry key="requestorId" value="${AFJobs.daas.requestor.id}" />
+				<entry key="source" value="${AFJobs.data.source}" />
+				<entry key="status" value="${AFJobs.banner.status}" />
+			</map>
+		</property>
+	</bean>
+	<bean name="facetJobAF" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bestbuy.search.merchandising.jobs.FacetJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="daasServiceURI"
+					value="${DaaSAF.protocol}://${DaaSAF.host}:${DaaSAF.port}/${DaaSAF.context}" />
+				<entry key="requestorId" value="${AFJobs.daas.requestor.id}" />
+				<entry key="source" value="${AFJobs.data.source}" />
+				<entry key="status" value="${AFJobs.facet.status}" />
+			</map>
+		</property>
+	</bean>
+	<!-- End of AF Jobs -->
+	<!-- Synonym Job Trigger -->
+	<bean id="synonymCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="synonymGroupJob" />
+	</bean>
+
+	<bean id="keywordRedirectCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="keywordRedirectJob" />
+	</bean>
+
+	<bean id="promoCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="promoJob" />
+	</bean>
+
+	<bean id="attributesCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="attributesJob" />
+	</bean>
+	
+	<bean id="attributesSimpleJobTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+	  <property name="jobDetail" ref="attributesJob"/>
+  	</bean>
+
+	<!-- Expired Assets Trigger(Default Every Night) -->
+	<bean id="expiredCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="expiredJob" />
+	</bean>
+
+	<!-- Delete Assets Trigger(Default Every Month) -->
+	<bean id="deleteCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="deleteAssetsJob" />
+	</bean>
+
+	<bean id="bannerCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="bannerJob" />
+	</bean>
+
+	<bean id="facetCronJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="facetJob" />
+	</bean>
+	<!-- Start of AF Job Trigger -->
+	<bean id="synonymCronJobTriggerAF" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="synonymGroupJobAF" />
+	</bean>
+
+	<bean id="keywordRedirectCronJobTriggerAF" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="keywordRedirectJobAF" />
+	</bean>
+	<bean id="promoCronJobTriggerAF" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="promoJobAF" />
+	</bean>
+	<bean id="bannerCronJobTriggerAF" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="bannerJobAF" />
+	</bean>
+	<bean id="facetCronJobTriggerAF" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="facetJobAF" />
+	</bean>
+	<!-- End of AF Job Trigger -->
+
+	<!-- Job Scheduler Factory Bean -->
+	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="autoStartup" value="true" />
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="waitForJobsToCompleteOnShutdown" value="true" />
+		<property name="overwriteExistingJobs" value="true" />
+	</bean>
+
+	<!-- JDBC Template for the Job Tables -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="bizdataSource"></property>
+	</bean>
+
+</beans>

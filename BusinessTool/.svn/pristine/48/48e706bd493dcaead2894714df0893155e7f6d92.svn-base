@@ -1,0 +1,83 @@
+<div id="facetOrder" class="tab-pane fade facet_ordering">
+	<div class="facet_heading">Facet Ordering</div>
+	<div class="facet_left_cont">
+		<span>Category TreeView Loading... <img id="catLoading" src="../themes/default/images/bestbuy/cat_tree_loader.gif"></span>
+	</div>	
+	<div class="facet_right_cont">
+		<h1>Facet Ordering</h1>
+		
+		<div>
+			<div class="flt_right" id="facetDiv1" style="display:none;">
+				<button id="btnFacet1" class="btn btn-success btn_style" type="button">Edit</button>
+				<button id="btnFacetCancel" class="btn btn-success btn_style" type="button" style="display:none;">Cancel</button>
+			</div>
+			<div class="flt_left facet_txt" id="facetPath">Facet Ordering for:</div>
+		</div>
+		
+		<table class="table table-striped table-bordered tab_table" cellpadding="0" cellspacing="0" border="0" id="facetorder1">
+		  <thead>
+			<tr>
+			  <th>Display Order</th>
+			  <th>Facet Name</th>
+			  <th>Values</th>
+			  <th>Status</th>
+			  <th>Edit Display Order</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+				<td>Please click treeview to show data</td>
+			</tr>
+		   </tbody>
+			</table>                    
+
+			<div style="padding-bottom:2px;">
+				<div class="flt_left"><h1>Dependent Facets</h1></div>
+				<div class="flt_right" id="facetDiv2" style="display:none;">
+					<button id="btnFacet2" class="btn btn-success btn_style" type="button">Edit</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<table class="table table-striped table-bordered tab_table" cellpadding="0" cellspacing="0" border="0" id="facetorder2">
+			  <thead>
+				<tr>
+				  <th>Display Order</th>
+				  <th>Facet Name</th>
+				  <th>Values</th>
+				  <th>Status</th>
+				  <th>Edit Display Order</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+					<td>Please click treeview to show data</td>
+				</tr>
+				</tbody>
+			</table>
+				
+			<div style="padding-bottom:2px;">
+				<div class="flt_left"><h1>Hidden Facets</h1></div>
+				<div class="flt_right" id="facetDiv3" style="display:none;"><button id="btnFacet3" class="btn btn-success btn_style" type="button">Edit</button></div>
+				<div class="clear"></div>
+			</div>
+			
+			<table class="table table-striped table-bordered tab_table" cellpadding="0" cellspacing="0" border="0" id="facetorder3">
+			  <thead>
+				<tr>
+				  <th>Display Order</th>
+				  <th>Facet Name</th>
+				  <th>Values</th>
+				  <th>Status</th>
+				  <th>Edit Display Order</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+					<td>Please click treeview to show data</td>
+				</tr>
+				</tbody>
+			</table>                                        
+		<!--facet_right_cont div ends here -->
+	</div>
+	<div class="clear"></div>

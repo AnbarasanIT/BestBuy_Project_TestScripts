@@ -1,0 +1,73 @@
+{
+  "environments": [
+    {
+      "name": "dev",
+      "default": "true"
+    }
+  ],
+  "navigation": {
+    "transitionType": 7,
+    "isNative": false
+  },
+  "pagination": {
+    "rowsPerPage": 10
+  },
+  "components": {
+    "login": {
+      "moduleName": "login",
+      "path": "../components/login/js"
+    },
+    "synonyms": {
+      "moduleName": "synonyms",
+      "path": "../components/synonyms/js"
+    },
+    "keywords": {
+      "moduleName": "keywords",
+      "path": "../components/keywords/js"
+    },
+    "banners": {
+      "moduleName": "banners",
+      "path": "../components/banners/js"
+    },
+    "promopages": {
+      "moduleName": "promopages",
+      "path": "../components/promopages/js"
+    },
+    "facets": {
+      "moduleName": "facets",
+      "path": "../components/facets/js"
+    },
+    "facetorder": {
+      "moduleName": "facetorder",
+      "path": "../components/facetorder/js"
+    },
+    "boostblock": {
+      "moduleName": "boostblock",
+      "path": "../components/boostblock/js"
+    },
+    "useradmin": {
+      "moduleName": "useradmin",
+      "path": "../components/useradmin/js"
+    },
+    "search": {
+      "moduleName": "search",
+      "path": "../components/search/js"
+    },
+    "header": {
+      "moduleName": "header",
+      "path": "common_components/modules/header/js"
+    },
+    "navigation": {
+      "moduleName": "navigation",
+      "path": "../components/navigation/js"
+    },
+    "footer": {
+      "moduleName": "footer",
+      "path": "common_components/modules/footer/js"
+    },
+    "pagination": {
+      "moduleName": "pagination",
+      "path": "../components/pagination/js"
+    }
+  }
+}

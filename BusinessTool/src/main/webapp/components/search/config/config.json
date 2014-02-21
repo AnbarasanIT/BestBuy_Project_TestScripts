@@ -1,0 +1,15 @@
+{
+
+    "info":{
+        "widgetId":"12012",
+        "widgetName":"Login"
+    },
+    "components":{
+        "search":{
+            "moduleName":"search",
+            "host":"http://localhost",
+            "port":"2020"
+        }
+    },
+    "theme":"red"
+}

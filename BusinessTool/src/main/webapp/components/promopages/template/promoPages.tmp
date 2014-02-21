@@ -1,0 +1,95 @@
+
+<table id="myTable" class="table table-striped table-bordered tab_table tablesorter" cellpadding="0" cellspacing="0" border="0">
+  <thead>
+	<tr>
+	  <!-- <th><input type="checkbox" class="checkall" id="checkall"></th> -->
+	  <th>Actions</th>
+	  <th tabname="promoName"><span class="tabheader">Promo Page Name<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="promoNamSearch" name="search"></th>
+	  <th tabname="skuIds"><span class="tabheader">SKUs<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="skuIdSearch" name="search"></th>
+	   <th tabname="startDate"><span class="tabheader">Start Date<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	  <th tabname="endDate"><span class="tabheader">End Date<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	   <th tabname="modifiedBy"><span class="tabheader">Last Modified By<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="lastModifiedBySearch" name="search"></th>
+	   <th tabname="modifiedDate" id="sortcolor" class="sortclr"><span class="tabheader">Modified Date<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span></th>
+	   <th tabname="status"><span class="tabheader">Status<img class="sortIcon" name="sortIcon" src="../themes/default/images/bestbuy/small.png"></span><br><input type="text" class="searchinput" id="statusSearch" name="search"></th>
+	</tr>
+  </thead>
+  {{#if rows.length}}
+  <tbody  id="promocontent">
+	{{#each rows}}
+		<tr id="{{promoId}}">
+			<td class="center_td action_wid">{{{actionPromo actions}}}</td>
+			<td id="promoNameTerm" class="prim_width">{{{promoName}}}</td>
+			<td class="term_td">{{{skuIds}}}</td> 
+			<td class="date_width">{{{startDate}}}</td>
+			<td class="date_width">{{{endDate}}}</td>
+			<td>{{{modifiedBy}}}</td>
+			<td class="date_width">{{{modifiedDate}}}</td>
+			<td class="center_td match_wid">{{{status}}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+  {{else}}
+   <tbody>
+	    <tr><td colspan="10"><div class="alert alert_msg" id="alert_msg">No Record Available</div></td></tr>
+   </tbody>
+   {{/if}}
+</table>
+
+
+<div id="Add_promo" class="modal hide fade bbmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h4 id="promoLabel">Add Promo</h4>
+  </div>
+  <div class="modal-body">
+	<div class="pop_error" id="pop_error"></div>
+    <div class="addsynonymmodal addmodaltheme">
+        <table cellpadding="0" cellspacing="1">
+            <tr>
+                <td>Promo Name<sup>*</sup></td>
+                <td><input type="text" id="promoname" maxlength="50"><span class="promoname-error"></span></td>
+            </tr>
+            <tr>
+                <td>SKU ID's<sup>*</sup></td>
+                <td>
+                  <div class="terms_main">
+                    <div class="terms_tabs">
+                      <div class="terms_eachmain">  
+                      </div>
+                        <a class="greenfont" href="#">Add SKUs</a>
+                    </div>  
+                    <textarea class="addterms" maxlength="5000"></textarea><span class="addterms-error"></span>
+                  </div>  
+                </td>
+            </tr>
+            <tr>
+				<td>Start Date<sup>*</sup></td>
+				<td>
+					<div class="well">
+						<div id="startDateDiv" class="input-append date">
+							<input id="startDate" data-format="MM-dd-yyyy hh:mm" type="text"></input>
+						</div>
+					</div>
+					<span class="startdate-error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>End Date<sup>*</sup></td>
+				<td>
+					<div class="well">
+						<div id="endDateDiv" class="input-append date">
+							<input id="endDate" data-format="MM-dd-yyyy hh:mm" type="text"></input>
+						</div>
+					</div>
+					<span class="enddate-error"></span>
+				</td>
+			</tr>
+        </table>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn bbyellowbtn" id="create">CREATE</a>
+    <a href="#" class="cancel_btn_new" data-dismiss="modal" aria-hidden="true" id="cancel">CANCEL</a>
+  </div>
+  <!--Add Promo contents finish here -->
+</div>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?><uiidentifiers>
+
+	<username>//input[@id='txtUsername']</username>
+	<password>//input[@id='txtPassword']</password>
+	<LoginButton>//button[@id='btnLogin']</LoginButton>
+	<Ipad_View_MenuTab>//div[2]/div/div[3]/div</Ipad_View_MenuTab>
+	<Ipad_View_Synonyms_Tab>//div/div/div/ul/li/a</Ipad_View_Synonyms_Tab>
+	<Ipad_View_Keyword_Tab>//div/div/div/ul/li[2]/a</Ipad_View_Keyword_Tab>
+	<Ipad_View_Banners_Tab>//div/div/div/ul/li[3]/a</Ipad_View_Banners_Tab>
+	<Ipad_View_Promo_Tab>//div/div/div/ul/li[4]/a</Ipad_View_Promo_Tab>
+	<Ipad_View_Facets_Tab>//div/div/div/ul/li[5]/a</Ipad_View_Facets_Tab>
+	<Ipad_View_Facets_Ordering>//div/div/div/ul/li[6]/a
+	</Ipad_View_Facets_Ordering>
+	<Ipad_View_BoostAndBlock>//div/div/div/ul/li[7]/a
+	</Ipad_View_BoostAndBlock>
+	<Ipad_View_UserAdmin>//div/div/div/ul/li[9]/a</Ipad_View_UserAdmin>
+	<SynonymsTab>//a[contains(text(),'Synonyms')]</SynonymsTab>
+	<KeywordRedirectsTab>//a[contains(text(),'Keyword Redirects')]
+	</KeywordRedirectsTab>
+	<BannersTab>//a[contains(text(),'Banners')]</BannersTab>
+	<PromoPagesTab>//a[contains(text(),'Promo Pages')]</PromoPagesTab>
+	<FacetsTab>//a[contains(text(),'Facets')]</FacetsTab>
+	<FacetsOrderingTab>//a[contains(text(),'Facet Ordering')]
+	</FacetsOrderingTab>
+	<BoostnBlockTab>//a[contains(text(),'Boosts/Blocks')]
+	</BoostnBlockTab>
+	<UserAdminTab>//a[contains(text(),'Admin Tools')]</UserAdminTab>
+	<Prev_Btn>//button[@id='prevouspage']</Prev_Btn>
+	<Next_Btn>//button[@id='nextpage']</Next_Btn>
+	<Edit_Icon>//img[@name='editIcon']</Edit_Icon>
+	<Close_Button>xpath=(//button[@type='button'])[2]</Close_Button>
+	<Create_Tree_View>//ins	</Create_Tree_View>
+	<Select_Create_Tree>//li/ul/li/ins</Select_Create_Tree>
+	<Create_Tree>//li/ul/li/ul/li/span/a</Create_Tree>
+	<Update_Btn>//a[contains(text(),'UPDATE')]</Update_Btn>
+	<Reject_Tab>//img[@name='reject']</Reject_Tab>
+	<Approve_Tab>//img[@name='approval']</Approve_Tab>
+	<Delete_Tab>//img[@name='delete']</Delete_Tab>
+	<Delete_PopUp_OkBtn>//button[@id='alertOk']</Delete_PopUp_OkBtn>
+	<StartDate>//input[@id='startDate']</StartDate>
+	<EndDate>//input[@id='endDate']</EndDate>
+	<SearchField>//input[@id='termsCombinedSearch']</SearchField>
+	<SearchFilterDropDown>//select[@id='searchOption']
+	</SearchFilterDropDown>
+	<SearchIcon>//button[@id='searchtext']</SearchIcon>
+	<AddIcon>//a[@id='AddIcon']/img</AddIcon>
+	<RefreshIcon>//div[@id='refresh']/img</RefreshIcon>
+	<ShowAll_btn>//button[@id='banner_showall']</ShowAll_btn>
+	<HideAll_btn>//button[@id='banner_hideall']</HideAll_btn>
+	<Start_Date_Link>//a[text()='25']</Start_Date_Link>
+	<End_Date_Link>//a[text()='5']</End_Date_Link>
+	<Start_Date_Link1>xpath=(//a[contains(text(),'5')])[2]
+	</Start_Date_Link1>
+	<End_Date_Link1>xpath=(//a[contains(text(),'15')])[3]</End_Date_Link1>
+	<Cal_MonthXpath>//div[@class='ui-datepicker-title']/select
+	</Cal_MonthXpath>
+	<Cal_YearXpath>//select[@class='ui-datepicker-year']</Cal_YearXpath>
+	<Cal_HourXpath>//select[@class='dateimepicker-hour']</Cal_HourXpath>
+	<Cal_MinuteXpath>//select[@class='dateimepicker-minuts']
+	</Cal_MinuteXpath>
+	<LogOutLink>//img[@title='Logout']</LogOutLink>
+	<Validation_Xpath>//td[text()='</Validation_Xpath>
+	<Validation_Xpath1>']</Validation_Xpath1>
+
+	<!-- User Synonyms Page UI-Constants -->
+	<PrimaryTerm>//input[@id='primaryTerm']</PrimaryTerm>
+	<TermsTxtArea>//div[@id='Add_synonyms']/div[2]/div/table/tbody/tr[5]/td[2]/div/textarea
+	</TermsTxtArea>
+	<AddTermsLink>//a[contains(text(),'Add Terms')]</AddTermsLink>
+	<Create_Btn>//a[contains(text(),'CREATE')]</Create_Btn>
+	<Sorting_icon>//img[@name='sortIcon']</Sorting_icon>
+	<syn_Create_SynList>xpath=(//input[@name='radio'])[2]
+	</syn_Create_SynList>
+	<syn_Create_SynType>xpath=(//input[@name='radio_type'])[2]
+	</syn_Create_SynType>
+	<Syn_UpdateBtn>//a[@id='create']</Syn_UpdateBtn>
+	<syn_PrimaryColumn_SearchField>//input[@id='primaryTermSearch']
+	</syn_PrimaryColumn_SearchField>
+	<syn_Close_Button>//div[@id='Add_synonyms']/div/button
+	</syn_Close_Button>
+	<syn_EditPopUp_TermClose>//td[2]/div/div/div/div/img
+	</syn_EditPopUp_TermClose>
+
+	<!-- User Keyword Redirect Page UI-Constants -->
+	<rd_redirectTerm>//input[@id='redirectterm']</rd_redirectTerm>
+	<rd_RedirectUrl>//input[@id='redirecturl']</rd_RedirectUrl>
+	<rd_SearchProfile>//select[@id='profile']</rd_SearchProfile>
+	<rd_StartDate>//a[@id='startDate']</rd_StartDate>
+	<rd_EndDate>//a[@id='endDate']</rd_EndDate>
+	<rd_Sorting_Icon>//img[@name='sortIcon']</rd_Sorting_Icon>
+	<rd_TermsSearchField>//input[@id='termsSearch']</rd_TermsSearchField>
+	<rd_Close_Button>//div[@id='Add_keywords']/div/button</rd_Close_Button>
+
+
+	<!-- User Banners Page UI-Constants -->
+	<banners_HideAll_btn>//button[@id='banner_hideall']
+	</banners_HideAll_btn>
+	<banners_ShowAll_btn>//button[@id='banner_showall']
+	</banners_ShowAll_btn>
+	<banners_SortByBannerName>//img[@name='sortIcon']
+	</banners_SortByBannerName>
+	<banners_Create_Banner_Banner_Name>//input[@id='bannername']
+	</banners_Create_Banner_Banner_Name>
+	<banners_Create_Banner_Position>//select[@id='position']
+	</banners_Create_Banner_Position>
+	<banners_Create_Banner_Priority>//select[@id='priority']
+	</banners_Create_Banner_Priority>
+	<banners_Create_Banner_StartDate>//input[@id='startdate']
+	</banners_Create_Banner_StartDate>
+	<banners_Create_Banner_EndDate>//input[@id='enddate']
+	</banners_Create_Banner_EndDate>
+	<banners_Create_Context_Keyword>//textarea[@name='addterms']
+	</banners_Create_Context_Keyword>
+	<banners_Create_Context_Keyword1>//div[@id='tagCloud1']/textarea
+	</banners_Create_Context_Keyword1>
+	<banners_Create_Context_Keyword_AddTerm>//a[@name='greenfont']
+	</banners_Create_Context_Keyword_AddTerm>
+	<banners_Create_Context_Keyword_AddTerm1>//div[@id='tagCloud1']/div/a
+	</banners_Create_Context_Keyword_AddTerm1>
+	<banners_Create_Context_Selected_Category1>//div[2]/div/div/ul/li/ins
+	</banners_Create_Context_Selected_Category1>
+	<banners_Create_Context_Selected_Category_Tree1>//div[2]/div/div/ul/li/ul/li/ins
+	</banners_Create_Context_Selected_Category_Tree1>
+	<banners_Create_Context_Selected_SubCategory1>//div[2]/div/div/ul/li/ul/li/ul/li[9]/span/a
+	</banners_Create_Context_Selected_SubCategory1>
+	<banners_Create_Context_SearchProfile>//select[@id="searchprofile"]
+	</banners_Create_Context_SearchProfile>
+	<banners_Create_Context_Selected_Category>//div[@id='treeviewContent']/div/ul/li/ins
+	</banners_Create_Context_Selected_Category>
+	<banners_Create_Context_Selected_Category_Tree>//li[@id='cat00000']/ins
+	</banners_Create_Context_Selected_Category_Tree>
+	<banners_Create_Context_Selected_SubCategory>//li[@id='abcat0300000']/span/a
+	</banners_Create_Context_Selected_SubCategory>
+	<banners_Create_Context_ApplyToSubCategory_CheckBox>//input[@id='applyToSubCategories']
+	</banners_Create_Context_ApplyToSubCategory_CheckBox>
+	<banners_Create_AddCategory>//a[contains(text(),'ADD CATEGORY')]
+	</banners_Create_AddCategory>
+	<banners_Create_Context_RemoveCategory>//a[contains(text(),'REMOVECATEGORY')]
+	</banners_Create_Context_RemoveCategory>
+	<banners_Create_Theme_BannersTemp>//select[@id='bannerheadselect']
+	</banners_Create_Theme_BannersTemp>
+	<banners_Create_Theme_AssetId>//div[4]/div/div/div/table/tbody/tr/td[2]/input
+	</banners_Create_Theme_AssetId>
+	<banners_Create_Btn>//a[@id='create']</banners_Create_Btn>
+	<banners_Update-Btn>//a[@id='create']</banners_Update-Btn>
+	<banners_StartDate_Calender>//td[2]/div/span[2]/i
+	</banners_StartDate_Calender>
+	<banners_Start_Date>//div[3]/table/tfoot/tr/th</banners_Start_Date>
+	<banners_EndDate_Calender>//tr[5]/td[2]/div/span[2]/i
+	</banners_EndDate_Calender>
+	<banners_End_Date>//div[6]/div[3]/table/tfoot/tr/th</banners_End_Date>
+	<banners_BannersNameSearch>//input[@id='bannerNameSearch']
+	</banners_BannersNameSearch>
+	<banners_Close_Button>//div[@id='Add_banners']/div/button
+	</banners_Close_Button>
+	<banners_KeywordTerm_CloseBtn>//img[@name='closebtn']
+	</banners_KeywordTerm_CloseBtn>
+	<banners_Add_Update_PopUpCloseBtn>//div[@id='Add_banners']/div/button
+	</banners_Add_Update_PopUpCloseBtn>
+	<banners_Keyword_Search>//input[@id='keywordsSearch']
+	</banners_Keyword_Search>
+
+	<!-- User Promo Page UI-Constants -->
+	<promo_Create_PromoName>//input[@id='promoname']
+	</promo_Create_PromoName>
+	<promo_Create_PromoSKUID>//div[@id='Add_promo']/div[2]/div/table/tbody/tr[2]/td[2]/div/textarea
+	</promo_Create_PromoSKUID>
+	<promo_Create_Start_Date>//input[@id='startdate']
+	</promo_Create_Start_Date>
+	<promo_Create_End_Date>//input[@id='enddate']</promo_Create_End_Date>
+	<promo_Create_AddTerm>//a[contains(text(),'Add SKUs')]
+	</promo_Create_AddTerm>
+	<promo_Create_Create_Btn>//a[contains(text(),'CREATE')]
+	</promo_Create_Create_Btn>
+	<promo_SortByPromoName>//img[@name='sortIcon']</promo_SortByPromoName>
+	<promo_Update_Btn>//a[@id='create']</promo_Update_Btn>
+	<promo_Update_Btn>//a[@id='create']</promo_Update_Btn>
+	<promo_promoNameSearchField>//input[@id='promoNamSearch']
+	</promo_promoNameSearchField>
+	<promo_Close_Button>//div[@id='Add_promo']/div/button
+	</promo_Close_Button>
+	<promo_AddUpdatePopUpCloseBtn>//div[@id='Add_promo']/div/button
+	</promo_AddUpdatePopUpCloseBtn>
+	<promo_SKU_Remove>//img[@name='closebtn']</promo_SKU_Remove>
+
+	<!-- User Facets Page UI-Constants -->
+	<facets_Create_DisplayedOrHidden_Facets>xpath=(//input[@type='radio'])[2]
+	</facets_Create_DisplayedOrHidden_Facets>
+	<facets_Create_Attribute>//input[@id='attributes']
+	</facets_Create_Attribute>
+	<facets_Create_SelectFacets>//ul[@id='left']/li
+	</facets_Create_SelectFacets>
+	<facets_Create_SelectFacets1>//ul[@id='left']/li[4]
+	</facets_Create_SelectFacets1>
+	<facets_Create_Submit>//a[@id='submit']
+	</facets_Create_Submit>
+	<facets_Create_SystemName>//input[@id='systemname']
+	</facets_Create_SystemName>
+	<facets_Create_Display_Name>//input[@id='displayname']
+	</facets_Create_Display_Name>
+	<facets_Create_Position>//select[@id='position']
+	</facets_Create_Position>
+	<facets_Create_StartDate>//a[contains(text(),'Start Date')]
+	</facets_Create_StartDate>
+	<facets_Create_EndDate>//a[contains(text(),'End Date')]
+	</facets_Create_EndDate>
+	<facets_Create_Mode>//select[@id='mode']</facets_Create_Mode>
+	<facets_Create_AssetID>//input[@id='assetid']</facets_Create_AssetID>
+	<facets_Create_SortOrder_SpecificOrder>//input[@id='sortType']
+	</facets_Create_SortOrder_SpecificOrder>
+	<facetsCreateControlOrderBtn>//input[@id='btn_907']
+	</facetsCreateControlOrderBtn>
+	<facets_MinValue_Create>//select[@id='minimim']
+	</facets_MinValue_Create>
+	<facets_MaxValue_Create>//select[@id='maximum']
+	</facets_MaxValue_Create>
+	<facets_Create_Btn>//a[contains(text(),'CREATE')]</facets_Create_Btn>
+	<facets_Create_Selected_Category>//input[@id='selectCategory']
+	</facets_Create_Selected_Category>
+	<facets_Create_ApplyToCategory_CheckBox>xpath=(//input[@type='checkbox'])[5170]
+	</facets_Create_ApplyToCategory_CheckBox>
+	<facets_Create_AddPage>//div[@id='Add_facets']/div[2]/div[9]/button
+	</facets_Create_AddPage>
+	<facets_Create_AddPage1>//div[2]/a[2]</facets_Create_AddPage1>
+	<facets_Create_RemovePage>//a[contains(text(),'REMOVE PAGE')]
+	</facets_Create_RemovePage>
+	<facets_Edit_Icon>//img[@name='editIcon']</facets_Edit_Icon>
+	<facets_ShowAll>//div[@id='title_actions']/div/div[2]/button
+	</facets_ShowAll>
+	<facets_HideAll>//div[@id='title_actions']/div/div/button
+	</facets_HideAll>
+	<facets_Sorting_By_SysName>//img[@name='sortIcon']
+	</facets_Sorting_By_SysName>
+	<facets_SystemNameSearchField>//input[@id='systemNameSearch']
+	</facets_SystemNameSearchField>
+	<facets_Close_Button>//div[@id='Add_facets']/div/button
+	</facets_Close_Button>
+	<facets_Create_FacetValue_Control>//input[@id='btn_42935']
+	</facets_Create_FacetValue_Control>
+	<facets_Create_FacetValue_Control1>//input[@id='btn_42936']
+	</facets_Create_FacetValue_Control1>
+	<facets_Create_FacetValue_Control2>//input[@id='btn_42911']
+	</facets_Create_FacetValue_Control2>
+	<facets_Create_FacetValue_Control3>//input[@id='btn_42912']
+	</facets_Create_FacetValue_Control3>
+	<facets_Order_Remove>//input[@value='Remove']</facets_Order_Remove>
+	<facets_Order_Remove1>//input[@value='Remove']</facets_Order_Remove1>
+	<facets_AddAndUpdatePopUp_CloseBtn>//div[@id='Add_facets']/div/button
+	</facets_AddAndUpdatePopUp_CloseBtn>
+	<facets_CreatePopUp_NextBtn>//button[@id='nextpage']
+	</facets_CreatePopUp_NextBtn>
+	<facets_CreatePopUp_PreBtn>//button[@id='prevouspage']
+	</facets_CreatePopUp_PreBtn>
+    <facets_OrderValue_SearchField>//input[@id='attributeValueSearch']</facets_OrderValue_SearchField>
+    
+	<!-- User Facets Ordering Page UI-Constants -->
+
+	<fo_Tree_edit_category>//ins</fo_Tree_edit_category>
+	<fo_Tree_Bestbuy>//li/ul/li/ins</fo_Tree_Bestbuy>
+	<fo_Tree_Car>//li/ul/li/ul/li/span/a</fo_Tree_Car>
+	<fo_Edit_Btn>//button[@id='btnFacet1']</fo_Edit_Btn>
+	<fo_Save_Btn>//button[@id='btnFacet1']</fo_Save_Btn>
+	<fo_drag_Element>//td[contains(text(),'1')]</fo_drag_Element>
+	<fo_Close_Button>xpath=(//button[@type='button'])[2]</fo_Close_Button>
+	<fo_edit_textField>//td[5]/div/input</fo_edit_textField>
+	<fo_edit_textField1>//tr[2]/td[5]/div/input</fo_edit_textField1>
+
+	<!-- User BoostAndBlock Page UI-Constants -->
+	<bnb_Create_Search_Term>//input[@id='searchTerm']
+	</bnb_Create_Search_Term>
+	<bnb_Create_Next_Btn>//a[contains(text(),'NEXT')]</bnb_Create_Next_Btn>
+	<bnb_Create_BoostBtn>//a[@name='boostProduct']</bnb_Create_BoostBtn>
+	<bnb_Create_BoostBtn2>//a[@name='boostProduct']</bnb_Create_BoostBtn2>
+	<bnb_Remove_BoostBtn>//a[contains(text(),'REMOVE BOOST')]
+	</bnb_Remove_BoostBtn>
+	<bnb_Create_BLockBtn>xpath=(//a[@name='blockProduct'])[3]
+	</bnb_Create_BLockBtn>
+	<bnb_Create_Btn>//a[contains(text(),'CREATE')]</bnb_Create_Btn>
+	<bnb_Create_BackBtn>//a[contains(text(),'BACK')]</bnb_Create_BackBtn>
+	<bnb_Sorting_By_SearchTerm>//img[@name='sortIcon']
+	</bnb_Sorting_By_SearchTerm>
+	<bnb_SearchTermsSearchField>//input[@id='searchTermSearch']
+	</bnb_SearchTermsSearchField>
+	<bnb_Close_Button>//div[@id='Add_boostblock']/div/button
+	</bnb_Close_Button>
+	<bnb_Selected_Category>//div/ul/li/ul/li/ul/li[2]/span/a
+	</bnb_Selected_Category>
+
+	<!-- User Admin Page UI-Constants -->
+	<user_FirstName>//input[@id='fname']</user_FirstName>
+	<user_LastName>//input[@id='lname']</user_LastName>
+	<user_Id>//input[@id='uid']</user_Id>
+	<user_Role>//input[@name='role']</user_Role>
+	<user_Create>//a[contains(text(),'CREATE')]</user_Create>
+	<user_AddIcon>//a[@id='AddIcon']/img</user_AddIcon>
+	<user_SortingByFirstName>//img[@name='sortIcon']</user_SortingByFirstName>
+	<user_RefreshIcon>//div[@id='refresh']/img</user_RefreshIcon>
+	<user_Edit_Icon>//img[@name='editIcon']</user_Edit_Icon>
+	<user_Update_Btn>//a[@id='user_create']</user_Update_Btn>
+	<user_Close_Button>//div[2]/div/button</user_Close_Button>
+	<user_FirstName_SearchField>//input[@id='firstNameSearch']
+	</user_FirstName_SearchField>
+	<user_AddUpdate_PopUpCloseBtn>//div[@id='Add_useradmin']/div/button
+	</user_AddUpdate_PopUpCloseBtn>
+
+</uiidentifiers>
